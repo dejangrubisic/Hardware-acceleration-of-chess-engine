@@ -1,0 +1,763 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Dejan Grubisic\Desktop\Fakultet\1 Diplomski\VER\verif\sim
+Eadder
+Z1 w1529964097
+Z2 DPx4 ieee 11 numeric_std 0 22 k7B<7GmYYYmX;0X]XHFD10
+Z3 DPx3 std 6 textio 0 22 G^o2zK;Vh4eVdKTVo98653
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Dejan Grubisic\Desktop\Fakultet\1 Diplomski\VER\verif\sim
+Z6 8../../dut/adder.vhd
+Z7 F../../dut/adder.vhd
+l0
+L31
+V@`K:M4b@Ul[BKBm^6kC@P2
+Z8 OE;C;10.0b;49
+32
+Z9 !s108 1529967082.590000
+Z10 !s90 -reportprogress|300|../../dut/adder.vhd|
+Z11 !s107 ../../dut/adder.vhd|
+Z12 tExplicit 1 NoCoverage 1
+!s100 ekDWL=7SUIzXCd:idaJ`K0
+Abehavioral
+R2
+R3
+R4
+Z13 DEx4 work 5 adder 0 22 @`K:M4b@Ul[BKBm^6kC@P2
+32
+l93
+L58
+V0hkgoNoDc>ZFYQ=2J<Z]m1
+R8
+R9
+R10
+R11
+R12
+!s100 ;44H97FalSliW;6[]]S5n1
+Eb_eval_king
+Z14 w1529598737
+Z15 DPx4 work 6 common 0 22 D:2U8_b2Q[5EA3Y;kTW<L1
+R2
+R3
+R4
+R5
+Z16 8../../dut/b_eval_king.vhd
+Z17 F../../dut/b_eval_king.vhd
+l0
+L7
+VdOEohD_@3P:D2:gMW;RnX3
+R8
+32
+Z18 !s108 1529967082.878000
+Z19 !s90 -reportprogress|300|../../dut/b_eval_king.vhd|
+Z20 !s107 ../../dut/b_eval_king.vhd|
+R12
+!s100 7`fSC<:;JcjRn:1^M]0J31
+Abehavioral
+R15
+R2
+R3
+R4
+Z21 DEx4 work 11 b_eval_king 0 22 dOEohD_@3P:D2:gMW;RnX3
+32
+l53
+L22
+VHDIZ03l`06=;?QmBW4h2G1
+R8
+R18
+R19
+R20
+R12
+!s100 AdC_X2UBZZi_@g5F6z:Rh3
+Eb_eval_pawn
+Z22 w1529583469
+R15
+R2
+R3
+R4
+R5
+Z23 8../../dut/b_eval_pawn.vhd
+Z24 F../../dut/b_eval_pawn.vhd
+l0
+L7
+V>ZfdPQCOlNc>2f9nhg4NH0
+R8
+32
+Z25 !s108 1529967083.330000
+Z26 !s90 -reportprogress|300|../../dut/b_eval_pawn.vhd|
+Z27 !s107 ../../dut/b_eval_pawn.vhd|
+R12
+!s100 Xc=dV:NV^dl3TK[TB7Y=@2
+Abehavioral
+R15
+R2
+R3
+R4
+Z28 DEx4 work 11 b_eval_pawn 0 22 >ZfdPQCOlNc>2f9nhg4NH0
+32
+l63
+L21
+V5c;PiGMd91fGf:0l_VS9F3
+R8
+R25
+R26
+R27
+R12
+!s100 NgkPX_MAMMJEAL;5:6?B73
+Echoose_king
+Z29 w1528917482
+R2
+R3
+R4
+R5
+Z30 8../../dut/choose_king.vhd
+Z31 F../../dut/choose_king.vhd
+l0
+L31
+Vae0gkjCSBL<UVi;S43k:j3
+R8
+32
+Z32 !s108 1529967084.695000
+Z33 !s90 -reportprogress|300|../../dut/choose_king.vhd|
+Z34 !s107 ../../dut/choose_king.vhd|
+R12
+!s100 niBWzj_=RgEo5F]JYJT8`2
+Abehavioral
+R2
+R3
+R4
+DEx4 work 11 choose_king 0 22 ae0gkjCSBL<UVi;S43k:j3
+l48
+L46
+V0_f6_=z9bQ3^;k]W8`C>J0
+R8
+32
+R32
+R33
+R34
+R12
+!s100 k8?9bKnK>GhRXaom0a>W02
+Pcommon
+R2
+R3
+R4
+Z35 w1525071489
+R5
+Z36 8../../dut/common.vhd
+Z37 F../../dut/common.vhd
+l0
+L27
+VD:2U8_b2Q[5EA3Y;kTW<L1
+R8
+32
+b1
+Z38 !s108 1529967082.206000
+Z39 !s90 -reportprogress|300|../../dut/common.vhd|
+Z40 !s107 ../../dut/common.vhd|
+R12
+!s100 eIDVV<FYJ[JFc]7kdYcdY1
+Bbody
+R15
+R2
+R3
+R4
+32
+l0
+L44
+VaFW1XPVjS3iiI0ie:g1kf3
+R8
+R38
+R39
+R40
+R12
+nbody
+!s100 G28NofoS__1[;WeN9DKn;3
+Yeval_if
+Z41 DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
+V1=Gg67?Ga5h[<Y>NA]zC82
+r1
+31
+IjKK0cAVfoMPKPM<?aKEfm1
+S1
+R5
+w1529871635
+F../sv/eval_if.sv
+Z42 8../sv/eval_verif_pkg.sv
+Z43 F../sv/eval_verif_pkg.sv
+L0 15
+Z44 OE;L;10.0b;49
+Z45 !s108 1529967089.356000
+Z46 !s107 ../sv/eval_if.sv|../sv/tests/test_eval_my_1.sv|../sv/tests/test_eval_base.sv|../sv/tests/eval_test_lib.sv|../sv/eval_env.sv|../sv/scoreboard/eval_scoreboard.sv|../sv/scoreboard/eval_predictor.sv|../sv/scoreboard/eval_scoreboard_lib.sv|../sv/eval_agent.sv|../sv/eval_monitor.sv|../sv/eval_coverage.sv|../sv/eval_driver.sv|../sv/sequences/eval_base_seq.sv|../sv/sequences/eval_seq_lib.sv|../sv/eval_sequencer.sv|../sv/eval_frame.sv|../sv/eval_config.sv|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_deprecated_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_reg_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_callback_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_sequence_defines.svh|C:\questasim_10.0b\uvm-1.2\src/tlm1/uvm_tlm_imps.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_tlm_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_printer_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_object_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_phase_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_message_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_global_defines.svh|C:\questasim_10.0b\uvm-1.2\src/macros/uvm_version_defines.svh|C:\questasim_10.0b\uvm-1.2\src/uvm_macros.svh|../sv/eval_verif_top.sv|../sv/eval_verif_pkg.sv|
+Z47 !s90 -reportprogress|300|-sv|+incdir+C:\questasim_10.0b\uvm-1.2\src|+incdir+../sv|../sv/eval_verif_pkg.sv|../sv/eval_verif_top.sv|
+Z48 o-sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z49 !s92 -sv {+incdir+C:\questasim_10.0b\uvm-1.2\src} +incdir+../sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s85 0
+!s100 TJ=Daj2]XQS3J2A4ljV^R2
+!s105 eval_verif_pkg_sv_unit
+Xeval_verif_pkg
+R41
+Z50 DXx6 mtiUvm 7 uvm_pkg 0 22 7Wjd8=:f;WS>k[Umjh7GW1
+V0XKhH0E2Z=eeP4k70cK2P3
+r1
+31
+I0XKhH0E2Z=eeP4k70cK2P3
+S1
+R5
+w1529961052
+R42
+R43
+Z51 FC:\questasim_10.0b\uvm-1.2\src/uvm_macros.svh
+Z52 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_version_defines.svh
+Z53 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_global_defines.svh
+Z54 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_message_defines.svh
+Z55 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_phase_defines.svh
+Z56 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_object_defines.svh
+Z57 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_printer_defines.svh
+Z58 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_tlm_defines.svh
+Z59 FC:\questasim_10.0b\uvm-1.2\src/tlm1/uvm_tlm_imps.svh
+Z60 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_sequence_defines.svh
+Z61 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_callback_defines.svh
+Z62 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_reg_defines.svh
+Z63 FC:\questasim_10.0b\uvm-1.2\src/macros/uvm_deprecated_defines.svh
+F../sv/eval_config.sv
+F../sv/eval_frame.sv
+F../sv/eval_sequencer.sv
+F../sv/sequences/eval_seq_lib.sv
+Z64 F../sv/sequences/eval_base_seq.sv
+F../sv/eval_driver.sv
+Z65 F../sv/eval_coverage.sv
+F../sv/eval_monitor.sv
+R65
+F../sv/eval_agent.sv
+F../sv/scoreboard/eval_scoreboard_lib.sv
+Z66 F../sv/scoreboard/eval_predictor.sv
+F../sv/scoreboard/eval_scoreboard.sv
+R66
+F../sv/eval_env.sv
+F../sv/tests/eval_test_lib.sv
+F../sv/tests/test_eval_base.sv
+F../sv/tests/test_eval_my_1.sv
+R64
+L0 15
+R44
+R45
+R46
+R47
+R48
+R49
+!s85 0
+!s100 YRRYJ6V00DH0H1N6bU^;f2
+veval_verif_top
+R41
+R50
+DXx4 work 14 eval_verif_pkg 0 22 0XKhH0E2Z=eeP4k70cK2P3
+V5`mZKoFzOo9?Kn;0XP5_M2
+r1
+31
+IYG7dPZ7`jWNMNT@NEV55o1
+S1
+R5
+w1529872277
+8../sv/eval_verif_top.sv
+F../sv/eval_verif_top.sv
+R51
+R52
+R53
+R54
+R55
+R56
+R57
+R58
+R59
+R60
+R61
+R62
+R63
+L0 12
+R44
+R45
+R46
+R47
+R48
+R49
+!s85 0
+!s100 HPk^j_nWzRnmQjWF;Jf`B2
+!s105 eval_verif_top_sv_unit
+Efifo_reg
+Z67 w1526459883
+R15
+R2
+R3
+R4
+R5
+Z68 8../../dut/fifo_reg.vhd
+Z69 F../../dut/fifo_reg.vhd
+l0
+L17
+V`fPkLKXeZN@ILL55<m=zC1
+R8
+32
+Z70 !s108 1529967085.442000
+Z71 !s90 -reportprogress|300|../../dut/fifo_reg.vhd|
+Z72 !s107 ../../dut/fifo_reg.vhd|
+R12
+!s100 ImX=[AF@M2ee2Ha1>37fN0
+Artl
+R15
+R2
+R3
+R4
+Z73 DEx4 work 8 fifo_reg 0 22 `fPkLKXeZN@ILL55<m=zC1
+32
+l57
+L39
+VGNFT=CK0;=QE_SX>2EN;o1
+R8
+R70
+R71
+R72
+R12
+!s100 MBFoE]2>bhTPjJiA8=kEZ1
+Efifo_top
+Z74 w1528446045
+R15
+R2
+R3
+R4
+R5
+Z75 8../../dut/fifo_top.vhd
+Z76 F../../dut/fifo_top.vhd
+l0
+L32
+V8Gdb^i9@N@lN;a4@1M?Z62
+R8
+32
+Z77 !s108 1529967085.883000
+Z78 !s90 -reportprogress|300|../../dut/fifo_top.vhd|
+Z79 !s107 ../../dut/fifo_top.vhd|
+R12
+!s100 UAAYhD50Yd4CFa=P1YgO:1
+Abehavioral
+R73
+Z80 DEx4 work 15 reduction_coder 0 22 mfciC1DLC3k0OB7;8[Za<0
+R15
+R2
+R3
+R4
+Z81 DEx4 work 8 fifo_top 0 22 8Gdb^i9@N@lN;a4@1M?Z62
+32
+l50
+L45
+VM1l:P`QJ4m`NmQz<:cFj11
+R8
+R77
+R78
+R79
+R12
+!s100 =C6X:J1eT0;N4=gm]0GOk0
+Ematerial_of_pieces
+Z82 w1529611738
+R15
+R2
+R3
+R4
+R5
+Z83 8../../dut/material_of_pieces.vhd
+Z84 F../../dut/material_of_pieces.vhd
+l0
+L32
+V06@SPOIOi7^4j_gVXzM4D3
+R8
+32
+Z85 !s108 1529967086.225000
+Z86 !s90 -reportprogress|300|../../dut/material_of_pieces.vhd|
+Z87 !s107 ../../dut/material_of_pieces.vhd|
+R12
+!s100 `f>z99MgQbk9XMa:;]L353
+Abehavioral
+R15
+R2
+R3
+R4
+Z88 DEx4 work 18 material_of_pieces 0 22 06@SPOIOi7^4j_gVXzM4D3
+32
+l90
+L55
+V5@8W:J[mPi:SE0ACom4::3
+R8
+R85
+R86
+R87
+R12
+!s100 =F9OSLF>m=a4EGXfLdVYd3
+Ememory_subsystem
+Z89 w1529582750
+R15
+R2
+R3
+R4
+R5
+Z90 8../../dut/memory_subsystem.vhd
+Z91 F../../dut/memory_subsystem.vhd
+l0
+L32
+V^NJSc<7hFKbAB5SX9>h=M0
+R8
+32
+Z92 !s108 1529967087.101000
+Z93 !s90 -reportprogress|300|../../dut/memory_subsystem.vhd|
+Z94 !s107 ../../dut/memory_subsystem.vhd|
+R12
+!s100 1NbZhE=fH=GTG7M[NF:ni2
+Abehavioral
+Z95 DEx4 work 12 memory_table 0 22 MJO@GXAFUhA3C7bA0fUja1
+R15
+R2
+R3
+R4
+Z96 DEx4 work 16 memory_subsystem 0 22 ^NJSc<7hFKbAB5SX9>h=M0
+32
+l69
+L63
+VmT`S>JS1eD0mL<fo@Z9^70
+R8
+R92
+R93
+R94
+R12
+!s100 cf3l^FILFk1b3Lz`S3gK11
+Ememory_table
+Z97 w1526419688
+R15
+R2
+R3
+R4
+R5
+Z98 8../../dut/memory_table.vhd
+Z99 F../../dut/memory_table.vhd
+l0
+L32
+VMJO@GXAFUhA3C7bA0fUja1
+R8
+32
+Z100 !s108 1529967086.660000
+Z101 !s90 -reportprogress|300|../../dut/memory_table.vhd|
+Z102 !s107 ../../dut/memory_table.vhd|
+R12
+!s100 SDdTn3mh2ee8AKK[1RRE^3
+Abehavioral
+R15
+R2
+R3
+R4
+R95
+32
+l59
+L49
+VYeGHjcgFCIDYan:_d9^XG1
+R8
+R100
+R101
+R102
+R12
+!s100 lz@P1G7zAU9ePH0N<7iEH1
+Topttop
+VgHZ1d3Yk:e=GLgikgBhSg2
+04 14 4 work eval_verif_top fast 0
+o+cover -nocovercells
+nopttop
+OE;O;10.0b;49
+R5
+!s102 +cover
+Epawn_rank
+Z103 w1525728746
+R15
+R2
+R3
+R4
+R5
+Z104 8../../dut/pawn_rank.vhd
+Z105 F../../dut/pawn_rank.vhd
+l0
+L32
+VA>_Q<EIo`S<9R7PXPfW=I3
+R8
+32
+Z106 !s108 1529967087.427000
+Z107 !s90 -reportprogress|300|../../dut/pawn_rank.vhd|
+Z108 !s107 ../../dut/pawn_rank.vhd|
+R12
+!s100 5BC;6hUC=;:X]^cRcNg_b3
+Abehavioral
+R15
+R2
+R3
+R4
+Z109 DEx4 work 9 pawn_rank 0 22 A>_Q<EIo`S<9R7PXPfW=I3
+32
+l57
+L45
+Ve>oEU[:Ujc>Hc1o1P`ReF2
+R8
+R106
+R107
+R108
+R12
+!s100 ;3FFBfn49JHk0^`VQ9OVW0
+Erank
+Z110 w1525519640
+R2
+R3
+R4
+R5
+Z111 8../../dut/rank.vhd
+Z112 F../../dut/rank.vhd
+l0
+L31
+VZ`=VI>F:Ze?bo4mEJzm]m3
+R8
+32
+Z113 !s108 1529967087.817000
+Z114 !s90 -reportprogress|300|../../dut/rank.vhd|
+Z115 !s107 ../../dut/rank.vhd|
+R12
+!s100 869>E:@[=8XoGbgSO;EgB2
+Abehavioral
+R2
+R3
+R4
+Z116 DEx4 work 4 rank 0 22 Z`=VI>F:Ze?bo4mEJzm]m3
+32
+l41
+L39
+Vhn9J_WSNHX9g1?neYc6LS2
+R8
+R113
+R114
+R115
+R12
+!s100 1_T=L[612`4b;kzn>c2KI2
+Ereduction_coder
+Z117 w1525549394
+R2
+R15
+R3
+R4
+R5
+Z118 8../../dut/reduction_coder.vhd
+Z119 F../../dut/reduction_coder.vhd
+l0
+L24
+VmfciC1DLC3k0OB7;8[Za<0
+R8
+32
+Z120 !s108 1529967085.087000
+Z121 !s90 -reportprogress|300|../../dut/reduction_coder.vhd|
+Z122 !s107 ../../dut/reduction_coder.vhd|
+R12
+!s100 3o65djhDYENgH]E[F4_bm0
+Abehavioral
+R2
+R15
+R3
+R4
+R80
+32
+l36
+L32
+V8g=`XlK?5Hd=jVKBWXiF01
+R8
+R120
+R121
+R122
+R12
+!s100 @2YA=28zjgV1g32RK[47N3
+Eselect_piece
+Z123 w1528659334
+R2
+R15
+R3
+R4
+R5
+Z124 8../../dut/select_piece.vhd
+Z125 F../../dut/select_piece.vhd
+l0
+L35
+Vd@oKW^@bFQVZaaCIo=`h`3
+R8
+32
+Z126 !s108 1529967088.117000
+Z127 !s90 -reportprogress|300|../../dut/select_piece.vhd|
+Z128 !s107 ../../dut/select_piece.vhd|
+R12
+!s100 WQXn4oIWHG4G_CL2Ec99@3
+Abehavioral
+R81
+R116
+R2
+R15
+R3
+R4
+Z129 DEx4 work 12 select_piece 0 22 d@oKW^@bFQVZaaCIo=`h`3
+32
+l130
+L73
+VZ[o9hcQhd?>:3ckg1@@=E0
+R8
+R126
+R127
+R128
+R12
+!s100 X@FUOIS9cMECPfI1gHC;S1
+Etop_module
+Z130 w1529600975
+R15
+R2
+R3
+R4
+R5
+Z131 8../../dut/top_module.vhd
+Z132 F../../dut/top_module.vhd
+l0
+L32
+VL3d9h`Gd12TDjJ:7UgSN`0
+R8
+32
+Z133 !s108 1529967088.602000
+Z134 !s90 -reportprogress|300|../../dut/top_module.vhd|
+Z135 !s107 ../../dut/top_module.vhd|
+R12
+!s100 :e<zLHP?1f00m<e2z=Lb33
+Abehavioral
+R13
+R21
+Z136 DEx4 work 11 w_eval_king 0 22 ?SFAmKoR7^9_=MT3CMbEc2
+R88
+R109
+R28
+Z137 DEx4 work 11 w_eval_pawn 0 22 _9hn@jTo^Vb=zXWkZYB<71
+R129
+R15
+R2
+R3
+R4
+Z138 DEx4 work 10 top_module 0 22 L3d9h`Gd12TDjJ:7UgSN`0
+32
+l117
+L50
+V4X8TgR==0cGk5lXh3[0@;1
+R8
+R133
+R134
+R135
+R12
+!s100 9EieCMo5Ak3[o4ijj;dP]3
+Etop_with_memory
+Z139 w1528411519
+R15
+R2
+R3
+R4
+R5
+Z140 8../../dut/top_with_memory.vhd
+Z141 F../../dut/top_with_memory.vhd
+l0
+L31
+V7^_@IOjlI^z@4n[SG?X[m1
+R8
+32
+Z142 !s108 1529967089.062000
+Z143 !s90 -reportprogress|300|../../dut/top_with_memory.vhd|
+Z144 !s107 ../../dut/top_with_memory.vhd|
+R12
+!s100 fEV2?J2PUJanfSn8_cF>D2
+Abehavioral
+R96
+R138
+R15
+R2
+R3
+R4
+DEx4 work 15 top_with_memory 0 22 7^_@IOjlI^z@4n[SG?X[m1
+32
+l66
+L51
+Vb6Ao_bCoBQ1[5G[2g09`D2
+R8
+R142
+R143
+R144
+R12
+!s100 @jk6OH^D?jab=PTAc<FFH2
+Ew_eval_king
+Z145 w1529754139
+R15
+R2
+R3
+R4
+R5
+Z146 8../../dut/w_eval_king.vhd
+Z147 F../../dut/w_eval_king.vhd
+l0
+L7
+V?SFAmKoR7^9_=MT3CMbEc2
+R8
+32
+Z148 !s108 1529967083.867000
+Z149 !s90 -reportprogress|300|../../dut/w_eval_king.vhd|
+Z150 !s107 ../../dut/w_eval_king.vhd|
+R12
+!s100 iXUc6anA5>khRk[T1OC_j3
+Abehavioral
+R15
+R2
+R3
+R4
+R136
+32
+l56
+L22
+VfI2P6:k`m3edQF_Z>J9Dg1
+R8
+R148
+R149
+R150
+R12
+!s100 Ta]OG072z5O=nlIKE_``42
+Ew_eval_pawn
+Z151 w1529583472
+R15
+R2
+R3
+R4
+R5
+Z152 8../../dut/w_eval_pawn.vhd
+Z153 F../../dut/w_eval_pawn.vhd
+l0
+L7
+V_9hn@jTo^Vb=zXWkZYB<71
+R8
+32
+Z154 !s108 1529967084.269000
+Z155 !s90 -reportprogress|300|../../dut/w_eval_pawn.vhd|
+Z156 !s107 ../../dut/w_eval_pawn.vhd|
+R12
+!s100 oSiGL3gM>cj9oe_T29LOl3
+Abehavioral
+R15
+R2
+R3
+R4
+R137
+32
+l63
+L21
+V@DBoW9L[]9gga2:o59D491
+R8
+R154
+R155
+R156
+R12
+!s100 _9C73Z=YnfYZc<=49=zFI1

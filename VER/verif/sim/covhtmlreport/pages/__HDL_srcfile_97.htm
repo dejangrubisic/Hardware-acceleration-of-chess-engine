@@ -1,0 +1,256 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span><span class="comment">/*******************************************************************************</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span><span class="comment">%s%%s%%s%%s%+-+-+-+-+-+-+-+-+-+-+%s%+-+-+-+-+-+-+-+-+-+-+-+-+%s%+-+-+%s%+-+-+-+-+-+-+-+-+</span><br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><span class="comment">%s%%s%%s%%s%|F|u|n|c|t|i|o|n|a|l|%s%|V|e|r|i|f|i|c|a|t|i|o|n|%s%|o|f|%s%|H|a|r|d|w|a|r|e|</span><br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="comment">%s%%s%%s%%s%+-+-+-+-+-+-+-+-+-+-+%s%+-+-+-+-+-+-+-+-+-+-+-+-+%s%+-+-+%s%+-+-+-+-+-+-+-+-+</span><br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span><span class="comment"></span><br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span><span class="comment">%s%%s%%s%%s%FILE%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%eval_frame.sv</span><br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span><span class="comment"></span><br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span><span class="comment">%s%%s%%s%%s%DESCRIPTION%s%%s%%s%%s%%s%</span><br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span><span class="comment"></span><br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span><span class="comment">*******************************************************************************/</span><br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span><br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span>`ifndef%s%eval_FRAME_SV<br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span>`<span class="keyattr">define</span>%s%eval_FRAME_SV<br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span><br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span><span class="keyword">class</span>%s%eval_frame%s%<span class="keyword">extends</span>%s%uvm_sequence_item;<br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span><br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">bit</span>%s%start_in;<br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span>%t%<span class="keyword">bit</span>%s%reset;<br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span>%t%%t%<br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">bit</span>%s%side_in;%t%<br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span>%t%<span class="keyword">bit</span>%s%color_in[64];<br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span>%t%<span class="keyword">bit</span>%s%[2:0]%s%piece_in[64];%t%<span class="comment">//%s%0-pawn%s%1-knight%s%2-bishop%s%3-rook%s%4-queen%s%5-king%s%6-empty</span><br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span><br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span>%t%<span class="comment">//result%s%</span><br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span>%t%<span class="keyword">int</span>%s%%s%result_axi_out;<br/>
+<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span>%s%%s%%s%%s%<span class="keyword">bit</span>%s%finished_axi_out;%t%<br/>
+<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span>%t%<br/>
+<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span>%t%<br/>
+<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span>%t%<br/>
+<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%w_pawn_count;<br/>
+<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%w_knight_count;<br/>
+<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%w_bishop_count;<br/>
+<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%w_rook_count;<br/>
+<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%w_queen_count;<br/>
+<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%t%<br/>
+<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%b_pawn_count;<br/>
+<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%b_knight_count;<br/>
+<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%b_bishop_count;<br/>
+<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%b_rook_count;<br/>
+<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span>%t%<span class="keyword">rand</span>%s%<span class="keyword">int</span>%s%b_queen_count;<br/>
+<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span>%t%%t%<br/>
+<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span>%t%%t%<br/>
+<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span>%t%<span class="keyword">constraint</span>%s%start_on%s%{start_in%s%==%s%1'b1;}<br/>
+<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span>%t%<br/>
+<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_w_total_promoted{<br/>
+<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>%t%%t%w_pawn_count%s%+%s%(w_knight_count%s%&lt;=%s%2%s%?%s%0%s%:%s%(w_knight_count%s%-%s%2))%s%+%s%<br/>
+<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span>%t%%t%%t%%t%%t%%s%%s%%s%(w_bishop_count%s%&lt;=%s%2%s%?%s%0%s%:%s%(w_bishop_count%s%-%s%2))%s%+<br/>
+<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span>%t%%t%%t%%t%%t%%s%%s%%s%(w_rook_count%s%%s%%s%&lt;=%s%2%s%?%s%0%s%:%s%(w_rook_count%s%-%s%2))%s%+%s%<br/>
+<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span>%t%%t%%t%%t%%t%%s%%s%%s%(w_queen_count%s%%s%&lt;=%s%1%s%?%s%0%s%:%s%(w_queen_count%s%-%s%1))%s%&lt;=%s%8;<br/>
+<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span>%t%%t%}%t%<br/>
+<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_b_total_promoted{<br/>
+<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span>%t%%t%b_pawn_count%s%+%s%(b_knight_count%s%&lt;=%s%2%s%?%s%0%s%:%s%(b_knight_count%s%-%s%2))%s%+%s%<br/>
+<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span>%t%%t%%t%%t%%t%%s%%s%%s%(b_bishop_count%s%&lt;=%s%2%s%?%s%0%s%:%s%(b_bishop_count%s%-%s%2))%s%+<br/>
+<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span>%t%%t%%t%%t%%t%%s%%s%%s%(b_rook_count%s%%s%%s%&lt;=%s%2%s%?%s%0%s%:%s%(b_rook_count%s%-%s%2))%s%+%s%<br/>
+<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span>%t%%t%%t%%t%%t%%s%%s%%s%(b_queen_count%s%%s%&lt;=%s%1%s%?%s%0%s%:%s%(b_queen_count%s%-%s%1))%s%&lt;=%s%8;<br/>
+<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span>%t%%t%}%t%<br/>
+<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span>%t%%t%<br/>
+<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span><br/>
+<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_w_pawn_count{w_pawn_count%s%<span class="keyword">inside</span>{[0:8]};}<br/>
+<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_w_knight_count{<br/>
+<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span>%t%%t%w_knight_count%s%<span class="keyword">dist</span>{[0:2]:/900,%s%3:=70,%s%4:=20,%s%5:=9,%s%[6:8]:/1%s%};<br/>
+<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span>%t%%t%}<br/>
+<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_w_bishop_count{<br/>
+<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span>%t%%t%w_bishop_count%s%<span class="keyword">dist</span>{[0:2]:/900,%s%3:=70,%s%4:=20,%s%5:=9,%s%[6:8]:/1%s%};<br/>
+<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span>%t%%t%}<br/>
+<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_w_rook_count{<br/>
+<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span>%t%%t%w_rook_count%s%<span class="keyword">dist</span>{[0:2]:/900,%s%3:=70,%s%4:=20,%s%5:=9,%s%[6:8]:/1%s%};<br/>
+<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span>%t%%t%}<br/>
+<a name="69"/><span style="color:red">%s%%s%%s%%s%69%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_w_queen_count{<br/>
+<a name="70"/><span style="color:red">%s%%s%%s%%s%70%s%%s%</span>%t%%t%w_queen_count%s%<span class="keyword">dist</span>{[0:1]:/850,%s%2:=70,%s%3:=50,%s%4:=20,%s%5:=9,%s%[6:8]:/1};<br/>
+<a name="71"/><span style="color:red">%s%%s%%s%%s%71%s%%s%</span>%t%%t%}<br/>
+<a name="72"/><span style="color:red">%s%%s%%s%%s%72%s%%s%</span>%t%<br/>
+<a name="73"/><span style="color:red">%s%%s%%s%%s%73%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_b_pawn_count{b_pawn_count%s%<span class="keyword">inside</span>{[0:8]};}<br/>
+<a name="74"/><span style="color:red">%s%%s%%s%%s%74%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_b_knight_count{<br/>
+<a name="75"/><span style="color:red">%s%%s%%s%%s%75%s%%s%</span>%t%%t%b_knight_count%s%<span class="keyword">dist</span>{[0:2]:/900,%s%3:=70,%s%4:=20,%s%5:=9,%s%[6:8]:/1};<br/>
+<a name="76"/><span style="color:red">%s%%s%%s%%s%76%s%%s%</span>%t%%t%}<br/>
+<a name="77"/><span style="color:red">%s%%s%%s%%s%77%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_b_bishop_count{<br/>
+<a name="78"/><span style="color:red">%s%%s%%s%%s%78%s%%s%</span>%t%%t%b_bishop_count%s%<span class="keyword">dist</span>{[0:2]:/900,%s%3:=70,%s%4:=20,%s%5:=9,%s%[6:8]:/1};<br/>
+<a name="79"/><span style="color:red">%s%%s%%s%%s%79%s%%s%</span>%t%%t%}<br/>
+<a name="80"/><span style="color:red">%s%%s%%s%%s%80%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_b_rook_count{<br/>
+<a name="81"/><span style="color:red">%s%%s%%s%%s%81%s%%s%</span>%t%%t%b_rook_count%s%<span class="keyword">dist</span>{[0:2]:/900,%s%3:=70,%s%4:=20,%s%5:=9,%s%[6:8]:/1};<br/>
+<a name="82"/><span style="color:red">%s%%s%%s%%s%82%s%%s%</span>%t%%t%}<br/>
+<a name="83"/><span style="color:red">%s%%s%%s%%s%83%s%%s%</span>%t%<span class="keyword">constraint</span>%s%const_b_queen_count{<br/>
+<a name="84"/><span style="color:red">%s%%s%%s%%s%84%s%%s%</span>%t%%t%b_queen_count%s%<span class="keyword">dist</span>{[0:1]:/850,%s%2:=70,%s%3:=50,%s%4:=20,%s%5:=9,%s%[6:8]:/1};<br/>
+<a name="85"/><span style="color:red">%s%%s%%s%%s%85%s%%s%</span>%t%%t%}<br/>
+<a name="86"/><span style="color:red">%s%%s%%s%%s%86%s%%s%</span>%t%<span class="comment">//%s%UVM%s%factory%s%registracija</span><br/>
+<a name="87"/><span style="color:red">%s%%s%%s%%s%87%s%%s%</span>%t%`uvm_object_utils_begin(eval_frame)<br/>
+<a name="88"/><span style="color:red">%s%%s%%s%%s%88%s%%s%</span><br/>
+<a name="89"/><span style="color:red">%s%%s%%s%%s%89%s%%s%</span>%t%%t%`uvm_field_int(start_in,%s%UVM_DEFAULT)<br/>
+<a name="90"/><span style="color:red">%s%%s%%s%%s%90%s%%s%</span>%t%%t%`uvm_field_int(side_in,%s%UVM_DEFAULT)<br/>
+<a name="91"/><span style="color:red">%s%%s%%s%%s%91%s%%s%</span>%t%%t%`uvm_field_sarray_int(color_in,%s%UVM_DEFAULT)<br/>
+<a name="92"/><span style="color:red">%s%%s%%s%%s%92%s%%s%</span>%t%%t%`uvm_field_sarray_int(piece_in,%s%UVM_DEFAULT)<br/>
+<a name="93"/><span style="color:red">%s%%s%%s%%s%93%s%%s%</span><br/>
+<a name="94"/><span style="color:red">%s%%s%%s%%s%94%s%%s%</span>%t%%t%`uvm_field_int(result_axi_out,%s%UVM_DEFAULT)<br/>
+<a name="95"/><span style="color:red">%s%%s%%s%%s%95%s%%s%</span>%t%%t%`uvm_field_int(finished_axi_out,%s%UVM_DEFAULT)<br/>
+<a name="96"/><span style="color:red">%s%%s%%s%%s%96%s%%s%</span>%t%%t%`uvm_field_int(reset,%s%UVM_DEFAULT)<br/>
+<a name="97"/><span style="color:red">%s%%s%%s%%s%97%s%%s%</span><br/>
+<a name="98"/><span style="color:red">%s%%s%%s%%s%98%s%%s%</span><br/>
+<a name="99"/><span style="color:red">%s%%s%%s%%s%99%s%%s%</span>%t%`uvm_object_utils_end<br/>
+<a name="100"/><span style="color:red">%s%%s%%s%100%s%%s%</span><br/>
+<a name="101"/><span style="color:red">%s%%s%%s%101%s%%s%</span>%t%<span class="comment">//%s%konstruktor</span><br/>
+<a name="102"/><span style="color:red">%s%%s%%s%102%s%%s%</span>%t%<span class="keyword">function</span>%s%<span class="keyword">new</span>(<span class="keyword">string</span>%s%name%s%=%s%<span class="literal">"eval_frame"</span>);<br/>
+<a name="103"/><span style="color:red">%s%%s%%s%103%s%%s%</span>%t%%t%<span class="keyword">super</span>.<span class="keyword">new</span>(name);<br/>
+<a name="104"/><span style="color:red">%s%%s%%s%104%s%%s%</span>%t%%t%<br/>
+<a name="105"/><span style="color:red">%s%%s%%s%105%s%%s%</span>%t%<span class="keyword">endfunction</span><br/>
+<a name="106"/><span style="color:red">%s%%s%%s%106%s%%s%</span>%t%<br/>
+<a name="107"/><span style="color:red">%s%%s%%s%107%s%%s%</span>%t%<span class="keyword">function</span>%s%<span class="keyword">void</span>%s%post_randomize();<br/>
+<a name="108"/><span style="color:red">%s%%s%%s%108%s%%s%</span>%t%%t%<br/>
+<a name="109"/><span style="color:red">%s%%s%%s%109%s%%s%</span>%t%%t%<span class="keyword">int</span>%s%square_queue[$];<br/>
+<a name="110"/><span style="color:red">%s%%s%%s%110%s%%s%</span>%t%%t%<span class="keyword">int</span>%s%piece_count;<br/>
+<a name="111"/><span style="color:red">%s%%s%%s%111%s%%s%</span>%t%%t%<span class="keyword">int</span>%s%choose_square;<br/>
+<a name="112"/><span style="color:red">%s%%s%%s%112%s%%s%</span>%t%%t%<span class="keyword">int</span>%s%temp;%s%<span class="comment">//bira%s%iz%s%square_queue%s%validno%s%polje%s%</span><br/>
+<a name="113"/><span style="color:red">%s%%s%%s%113%s%%s%</span>%t%%t%<br/>
+<a name="114"/><span style="color:red">%s%%s%%s%114%s%%s%</span>%t%%t%<span class="keyword">for</span>(<span class="keyword">int</span>%s%i%s%=%s%0;%s%i%s%&lt;%s%64;%s%i++)<br/>
+<a name="115"/><span style="color:red">%s%%s%%s%115%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="116"/><span style="color:red">%s%%s%%s%116%s%%s%</span>%t%%t%%t%square_queue[i]%s%=%s%i;<br/>
+<a name="117"/><span style="color:red">%s%%s%%s%117%s%%s%</span>%t%%t%%t%color_in[i]%s%=%s%0;%t%<span class="comment">//nije%s%bitno%s%koje%s%je%s%polje%s%kad%s%je%s%empty%s%al%s%aj</span><br/>
+<a name="118"/><span style="color:red">%s%%s%%s%118%s%%s%</span>%t%%t%%t%piece_in[i]%s%=%s%6;%t%<span class="comment">//empty</span><br/>
+<a name="119"/><span style="color:red">%s%%s%%s%119%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="120"/><span style="color:red">%s%%s%%s%120%s%%s%</span>%t%<br/>
+<a name="121"/><span style="color:red">%s%%s%%s%121%s%%s%</span>%t%%t%<span class="keyword">for</span>(<span class="keyword">int</span>%s%color%s%=%s%0;%s%color%s%&lt;=%s%1;%s%color++)%t%%t%<span class="comment">//beli%s%-%s%0,%s%crni%s%1</span><br/>
+<a name="122"/><span style="color:red">%s%%s%%s%122%s%%s%</span>%t%%t%%t%<span class="keyword">for</span>(<span class="keyword">int</span>%s%piece%s%=%s%0;%s%piece%s%&lt;%s%6;%s%piece++)%t%<span class="comment">//0-pawn%s%1-knight%s%2-bishop%s%3-rook%s%4-queen%s%5-king%s%6-empty</span><br/>
+<a name="123"/><span style="color:red">%s%%s%%s%123%s%%s%</span>%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="124"/><span style="color:red">%s%%s%%s%124%s%%s%</span>%t%%t%<br/>
+<a name="125"/><span style="color:red">%s%%s%%s%125%s%%s%</span>%t%%t%%t%%t%<span class="comment">//Broj%s%istih%s%figura%s%treba%s%tezinski%s%rasporediti%s%!!!</span><br/>
+<a name="126"/><span style="color:red">%s%%s%%s%126%s%%s%</span>%t%%t%%t%%t%<span class="keyword">if</span>(color%s%==%s%0)%s%<span class="keyword">begin</span><br/>
+<a name="127"/><span style="color:red">%s%%s%%s%127%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">case</span>%s%(piece)<br/>
+<a name="128"/><span style="color:red">%s%%s%%s%128%s%%s%</span>%t%%t%%t%%t%%t%0:%s%piece_count%s%=%s%w_pawn_count;<br/>
+<a name="129"/><span style="color:red">%s%%s%%s%129%s%%s%</span>%t%%t%%t%%t%%t%1:%s%piece_count%s%=%s%w_knight_count;<br/>
+<a name="130"/><span style="color:red">%s%%s%%s%130%s%%s%</span>%t%%t%%t%%t%%t%2:%s%piece_count%s%=%s%w_bishop_count;<br/>
+<a name="131"/><span style="color:red">%s%%s%%s%131%s%%s%</span>%t%%t%%t%%t%%t%3:%s%piece_count%s%=%s%w_rook_count;<br/>
+<a name="132"/><span style="color:red">%s%%s%%s%132%s%%s%</span>%t%%t%%t%%t%%t%4:%s%piece_count%s%=%s%w_queen_count;<br/>
+<a name="133"/><span style="color:red">%s%%s%%s%133%s%%s%</span>%t%%t%%t%%t%%t%5:%s%piece_count%s%=%s%1;<br/>
+<a name="134"/><span style="color:red">%s%%s%%s%134%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">endcase</span><br/>
+<a name="135"/><span style="color:red">%s%%s%%s%135%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="136"/><span style="color:red">%s%%s%%s%136%s%%s%</span>%t%%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">begin</span><br/>
+<a name="137"/><span style="color:red">%s%%s%%s%137%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">case</span>%s%(piece)<br/>
+<a name="138"/><span style="color:red">%s%%s%%s%138%s%%s%</span>%t%%t%%t%%t%%t%0:%s%piece_count%s%=%s%b_pawn_count;<br/>
+<a name="139"/><span style="color:red">%s%%s%%s%139%s%%s%</span>%t%%t%%t%%t%%t%1:%s%piece_count%s%=%s%b_knight_count;<br/>
+<a name="140"/><span style="color:red">%s%%s%%s%140%s%%s%</span>%t%%t%%t%%t%%t%2:%s%piece_count%s%=%s%b_bishop_count;<br/>
+<a name="141"/><span style="color:red">%s%%s%%s%141%s%%s%</span>%t%%t%%t%%t%%t%3:%s%piece_count%s%=%s%b_rook_count;<br/>
+<a name="142"/><span style="color:red">%s%%s%%s%142%s%%s%</span>%t%%t%%t%%t%%t%4:%s%piece_count%s%=%s%b_queen_count;<br/>
+<a name="143"/><span style="color:red">%s%%s%%s%143%s%%s%</span>%t%%t%%t%%t%%t%5:%s%piece_count%s%=%s%1;<br/>
+<a name="144"/><span style="color:red">%s%%s%%s%144%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">endcase</span><br/>
+<a name="145"/><span style="color:red">%s%%s%%s%145%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="146"/><span style="color:red">%s%%s%%s%146%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="147"/><span style="color:red">%s%%s%%s%147%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="148"/><span style="color:red">%s%%s%%s%148%s%%s%</span>%t%%t%%t%%t%<span class="comment">//$display("Piece_count[%0d]%s%[%0d]%s%=%s%%0d%s%",%s%color,%s%piece,%s%piece_count);%t%%t%%t%%t%%t%%t%%t%</span><br/>
+<a name="149"/><span style="color:red">%s%%s%%s%149%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="150"/><span style="color:red">%s%%s%%s%150%s%%s%</span>%t%%t%%t%%t%<span class="keyword">for</span>(<span class="keyword">int</span>%s%i%s%=%s%0;%s%i%s%&lt;%s%piece_count;%s%i++)%t%<span class="comment">//koliko%s%ima%s%figura%s%iste%s%boje%s%i%s%tipa</span><br/>
+<a name="151"/><span style="color:red">%s%%s%%s%151%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="152"/><span style="color:red">%s%%s%%s%152%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="153"/><span style="color:red">%s%%s%%s%153%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//izaberi%s%polje</span><br/>
+<a name="154"/><span style="color:red">%s%%s%%s%154%s%%s%</span>%t%%t%%t%%t%%t%temp%s%=%s%$urandom_range(0,%s%square_queue.size()-1);%t%<span class="comment">//biramo%s%polje%s%na%s%kom%s%je%s%figra</span><br/>
+<a name="155"/><span style="color:red">%s%%s%%s%155%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//$display("temp%s%=%s%%0d%s%",%s%temp);</span><br/>
+<a name="156"/><span style="color:red">%s%%s%%s%156%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="157"/><span style="color:red">%s%%s%%s%157%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>(piece%s%==%s%0)%t%<span class="comment">//ako%s%je%s%pesak%s%ne%s%sme%s%da%s%dobije%s%1.%s%i%s%8.%s%red</span><br/>
+<a name="158"/><span style="color:red">%s%%s%%s%158%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="159"/><span style="color:red">%s%%s%%s%159%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="comment">//$display("Pesak%s%je");%t%%t%%t%%t%</span><br/>
+<a name="160"/><span style="color:red">%s%%s%%s%160%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">while</span>((square_queue[temp]%s%&lt;%s%8)%s%||%s%(square_queue[temp]%s%&gt;%s%55))<br/>
+<a name="161"/><span style="color:red">%s%%s%%s%161%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="162"/><span style="color:red">%s%%s%%s%162%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%<span class="comment">//$display("Usao%s%u%s%while");</span><br/>
+<a name="163"/><span style="color:red">%s%%s%%s%163%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%<span class="comment">//ako%s%nije%s%ok%s%vrednost%s%za%s%pesaka,%s%probaj%s%nesto%s%drugo%s%%s%</span><br/>
+<a name="164"/><span style="color:red">%s%%s%%s%164%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%temp%s%=%s%$urandom_range(0,%s%square_queue.size()-1);<br/>
+<a name="165"/><span style="color:red">%s%%s%%s%165%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%<span class="comment">//$display("temp%s%=%s%%0d%s%",%s%temp);%t%%t%%t%%t%%t%%t%%t%</span><br/>
+<a name="166"/><span style="color:red">%s%%s%%s%166%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="167"/><span style="color:red">%s%%s%%s%167%s%%s%</span>%t%%t%%t%%t%%t%%t%<br/>
+<a name="168"/><span style="color:red">%s%%s%%s%168%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="169"/><span style="color:red">%s%%s%%s%169%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//polje%s%je%s%validno</span><br/>
+<a name="170"/><span style="color:red">%s%%s%%s%170%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//$display("Polje%s%validno");</span><br/>
+<a name="171"/><span style="color:red">%s%%s%%s%171%s%%s%</span>%t%%t%%t%%t%%t%choose_square%s%=%s%square_queue[temp];<br/>
+<a name="172"/><span style="color:red">%s%%s%%s%172%s%%s%</span>%t%%t%%t%%t%%t%square_queue.delete(temp);<br/>
+<a name="173"/><span style="color:red">%s%%s%%s%173%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="174"/><span style="color:red">%s%%s%%s%174%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//$display("choose_square%s%=%s%%0d%s%",%s%choose_square);</span><br/>
+<a name="175"/><span style="color:red">%s%%s%%s%175%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="176"/><span style="color:red">%s%%s%%s%176%s%%s%</span>%t%%t%%t%%t%%t%$<span class="keyvalu">cast</span>(color_in[choose_square]%s%,%s%color);<br/>
+<a name="177"/><span style="color:red">%s%%s%%s%177%s%%s%</span>%t%%t%%t%%t%%t%$<span class="keyvalu">cast</span>(piece_in[choose_square]%s%,%s%piece);<br/>
+<a name="178"/><span style="color:red">%s%%s%%s%178%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="179"/><span style="color:red">%s%%s%%s%179%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//$display("color_in[%0d]%s%=%s%%0d",%s%choose_square,%s%color_in[choose_square]);</span><br/>
+<a name="180"/><span style="color:red">%s%%s%%s%180%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">//$display("piece_in[%0d]%s%=%s%%0d",%s%choose_square,%s%piece_in[choose_square]);</span><br/>
+<a name="181"/><span style="color:red">%s%%s%%s%181%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="182"/><span style="color:red">%s%%s%%s%182%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="183"/><span style="color:red">%s%%s%%s%183%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="184"/><span style="color:red">%s%%s%%s%184%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="185"/><span style="color:red">%s%%s%%s%185%s%%s%</span>%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="186"/><span style="color:red">%s%%s%%s%186%s%%s%</span>%t%%t%%t%<br/>
+<a name="187"/><span style="color:red">%s%%s%%s%187%s%%s%</span>%t%%t%<span class="comment">//print_board();</span><br/>
+<a name="188"/><span style="color:red">%s%%s%%s%188%s%%s%</span>%t%%t%<span class="comment">//print_cololor_piece();</span><br/>
+<a name="189"/><span style="color:red">%s%%s%%s%189%s%%s%</span>%t%<span class="keyword">endfunction</span>%s%:%s%post_randomize<br/>
+<a name="190"/><span style="color:red">%s%%s%%s%190%s%%s%</span>%t%<br/>
+<a name="191"/><span style="color:red">%s%%s%%s%191%s%%s%</span>%t%<span class="keyword">function</span>%s%<span class="keyword">void</span>%s%print_board();<br/>
+<a name="192"/><span style="color:red">%s%%s%%s%192%s%%s%</span>%t%%t%<br/>
+<a name="193"/><span style="color:red">%s%%s%%s%193%s%%s%</span>%t%%t%<span class="keyword">string</span>%s%w_piece_char%s%=%s%<span class="literal">"PNBRQK"</span>%s%;<br/>
+<a name="194"/><span style="color:red">%s%%s%%s%194%s%%s%</span>%t%%t%<span class="keyword">string</span>%s%b_piece_char%s%=%s%<span class="literal">"pnbrqk"</span>%s%;<br/>
+<a name="195"/><span style="color:red">%s%%s%%s%195%s%%s%</span>%t%%t%<br/>
+<a name="196"/><span style="color:red">%s%%s%%s%196%s%%s%</span>%t%%t%$write(<span class="literal">"*******************%s%BOARD%s%*********************%s%\n"</span>);<br/>
+<a name="197"/><span style="color:red">%s%%s%%s%197%s%%s%</span>%t%%t%<br/>
+<a name="198"/><span style="color:red">%s%%s%%s%198%s%%s%</span><br/>
+<a name="199"/><span style="color:red">%s%%s%%s%199%s%%s%</span><br/>
+<a name="200"/><span style="color:red">%s%%s%%s%200%s%%s%</span>%t%%t%$write(<span class="literal">"8%s%"</span>);<br/>
+<a name="201"/><span style="color:red">%s%%s%%s%201%s%%s%</span>%t%%t%<span class="keyword">for</span>%s%(<span class="keyword">int</span>%s%i%s%=%s%0;%s%i%s%&lt;%s%64;%s%++i)%s%<br/>
+<a name="202"/><span style="color:red">%s%%s%%s%202%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="203"/><span style="color:red">%s%%s%%s%203%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>%s%(piece_in[i]%s%==%s%6)%s%%t%%t%%t%%t%%t%<br/>
+<a name="204"/><span style="color:red">%s%%s%%s%204%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"%s%."</span>);<br/>
+<a name="205"/><span style="color:red">%s%%s%%s%205%s%%s%</span>%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>(color_in[i]%s%==%s%0)<br/>
+<a name="206"/><span style="color:red">%s%%s%%s%206%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"%s%%c"</span>,%s%w_piece_char.getc(piece_in[i]));<br/>
+<a name="207"/><span style="color:red">%s%%s%%s%207%s%%s%</span>%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>(color_in[i]%s%==%s%1)<br/>
+<a name="208"/><span style="color:red">%s%%s%%s%208%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"%s%%c"</span>,%s%b_piece_char.getc(piece_in[i]));<br/>
+<a name="209"/><span style="color:red">%s%%s%%s%209%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="210"/><span style="color:red">%s%%s%%s%210%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="211"/><span style="color:red">%s%%s%%s%211%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>%s%((i%s%+%s%1)%s%%%s%8%s%==%s%0%s%&amp;&amp;%s%i%s%!=%s%63)<br/>
+<a name="212"/><span style="color:red">%s%%s%%s%212%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"\n%d%s%"</span>,%s%7%s%-%s%(i/8));<br/>
+<a name="213"/><span style="color:red">%s%%s%%s%213%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="214"/><span style="color:red">%s%%s%%s%214%s%%s%</span>%t%%t%$write(<span class="literal">"\n%s%a%s%b%s%c%s%d%s%e%s%f%s%g%s%h\n\n"</span>);<br/>
+<a name="215"/><span style="color:red">%s%%s%%s%215%s%%s%</span>%t%<span class="keyword">endfunction</span>%s%:%s%print_board<br/>
+<a name="216"/><span style="color:red">%s%%s%%s%216%s%%s%</span>%t%<br/>
+<a name="217"/><span style="color:red">%s%%s%%s%217%s%%s%</span>%t%<br/>
+<a name="218"/><span style="color:red">%s%%s%%s%218%s%%s%</span>%t%<br/>
+<a name="219"/><span style="color:red">%s%%s%%s%219%s%%s%</span>%t%<br/>
+<a name="220"/><span style="color:red">%s%%s%%s%220%s%%s%</span>%t%<span class="keyword">function</span>%s%<span class="keyword">void</span>%s%print_cololor_piece();<br/>
+<a name="221"/><span style="color:red">%s%%s%%s%221%s%%s%</span>%t%%t%$display(<span class="literal">"Color"</span>);<br/>
+<a name="222"/><span style="color:red">%s%%s%%s%222%s%%s%</span>%t%%t%<span class="keyword">for</span>(<span class="keyword">int</span>%s%i%s%=%s%0;%s%i%s%&lt;%s%64;%s%i++)<br/>
+<a name="223"/><span style="color:red">%s%%s%%s%223%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="224"/><span style="color:red">%s%%s%%s%224%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>(i%s%%%s%8%s%==%s%0)<br/>
+<a name="225"/><span style="color:red">%s%%s%%s%225%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"\n"</span>);<br/>
+<a name="226"/><span style="color:red">%s%%s%%s%226%s%%s%</span>%t%%t%%t%$write(<span class="literal">"%0d"</span>,%s%color_in[i]);%t%<br/>
+<a name="227"/><span style="color:red">%s%%s%%s%227%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="228"/><span style="color:red">%s%%s%%s%228%s%%s%</span>%t%<br/>
+<a name="229"/><span style="color:red">%s%%s%%s%229%s%%s%</span>%t%%t%$display(<span class="literal">"Piece"</span>);<br/>
+<a name="230"/><span style="color:red">%s%%s%%s%230%s%%s%</span>%t%%t%<span class="keyword">for</span>(<span class="keyword">int</span>%s%i%s%=%s%0;%s%i%s%&lt;%s%64;%s%i++)<br/>
+<a name="231"/><span style="color:red">%s%%s%%s%231%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="232"/><span style="color:red">%s%%s%%s%232%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>(i%s%%%s%8%s%==%s%0)<br/>
+<a name="233"/><span style="color:red">%s%%s%%s%233%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"\n"</span>);<br/>
+<a name="234"/><span style="color:red">%s%%s%%s%234%s%%s%</span>%t%%t%%t%$write(<span class="literal">"%0d"</span>,%s%piece_in[i]);%t%<br/>
+<a name="235"/><span style="color:red">%s%%s%%s%235%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="236"/><span style="color:red">%s%%s%%s%236%s%%s%</span>%t%%t%$write(<span class="literal">"\n\n\n"</span>);<br/>
+<a name="237"/><span style="color:red">%s%%s%%s%237%s%%s%</span>%t%<span class="keyword">endfunction</span>%s%:%s%print_cololor_piece<br/>
+<a name="238"/><span style="color:red">%s%%s%%s%238%s%%s%</span>%t%<br/>
+<a name="239"/><span style="color:red">%s%%s%%s%239%s%%s%</span><br/>
+<a name="240"/><span style="color:red">%s%%s%%s%240%s%%s%</span><span class="keyword">endclass</span><br/>
+<a name="241"/><span style="color:red">%s%%s%%s%241%s%%s%</span><br/>
+<a name="242"/><span style="color:red">%s%%s%%s%242%s%%s%</span><br/>
+<a name="243"/><span style="color:red">%s%%s%%s%243%s%%s%</span>`<span class="keyattr">endif</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>

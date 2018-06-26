@@ -1,0 +1,554 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span>`ifndef%s%EVAL_PREDICTOR_SV<br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span>`<span class="keyattr">define</span>%s%EVAL_PREDICTOR_SV<br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="comment">//Macros%s%-%s%Bonus%s%points</span><br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span>`<span class="keyattr">define</span>%s%DOUBLED_PAWN_PENALTY%t%%t%10<br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span>`<span class="keyattr">define</span>%s%ISOLATED_PAWN_PENALTY%t%%t%20<br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span>`<span class="keyattr">define</span>%s%BACKWARDS_PAWN_PENALTY%t%%t%8<br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span>`<span class="keyattr">define</span>%s%PASSED_PAWN_BONUS%t%%t%%t%20<br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span>`<span class="keyattr">define</span>%s%ROOK_SEMI_OPEN_FILE_BONUS%t%10<br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span>`<span class="keyattr">define</span>%s%ROOK_OPEN_FILE_BONUS%t%%t%15<br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span>`<span class="keyattr">define</span>%s%ROOK_ON_SEVENTH_BONUS%t%%t%20<br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span><span class="comment">/*</span><br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span><span class="comment">//Macros%s%-%s%pieces</span><br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span><span class="comment">`define%s%LIGHT%t%%t%%t%0</span><br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span><span class="comment">`define%s%DARK%t%%t%%t%1</span><br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span><span class="comment"></span><br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span><span class="comment">`define%s%PAWN%t%%t%%t%0</span><br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span><span class="comment">`define%s%KNIGHT%t%%t%%t%1</span><br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span><span class="comment">`define%s%BISHOP%t%%t%%t%2</span><br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span><span class="comment">`define%s%ROOK%t%%t%%t%3</span><br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span><span class="comment">`define%s%QUEEN%t%%t%%t%4</span><br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span><span class="comment">`define%s%KING%t%%t%%t%5</span><br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span><span class="comment"></span><br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span><span class="comment">`define%s%EMPTY%t%%t%%t%6</span><br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span><span class="comment"></span><br/>
+<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span><span class="comment">*/</span><br/>
+<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span><span class="comment">//Functions%s%%s%find%s%ROW%s%and%s%COLUMN</span><br/>
+<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span><span class="comment">//`define%s%ROW(x)%t%(x%s%&lt;&lt;%s%3)</span><br/>
+<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%ROW(%s%<span class="keyword">int</span>%s%x);<br/>
+<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span>%t%<span class="keyword">return</span>%s%(x%s%&gt;&gt;%s%3);<br/>
+<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%ROW<br/>
+<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span><br/>
+<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span><span class="comment">//`define%s%COL(x)%t%(x%s%&amp;%s%7)</span><br/>
+<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%COL(%s%<span class="keyword">int</span>%s%x);<br/>
+<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%t%<span class="keyword">return</span>%s%(x%s%&amp;%s%3'b111);<br/>
+<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%COL<br/>
+<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span><br/>
+<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span><br/>
+<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span><br/>
+<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span><br/>
+<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span><br/>
+<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span><br/>
+<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span><span class="comment">/*%s%the%s%values%s%of%s%the%s%pieces%s%*/</span><br/>
+<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span><span class="keyword">int</span>%s%piece_value[6]%s%=%s%{<br/>
+<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span>%t%100,%s%300,%s%300,%s%500,%s%900,%s%0<br/>
+<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>};<br/>
+<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span><br/>
+<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span><span class="comment">/*%s%The%s%"pcsq"%s%arrays%s%are%s%piece/square%s%tables.%s%They're%s%values</span><br/>
+<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span><span class="comment">%s%%s%%s%added%s%to%s%the%s%material%s%value%s%of%s%the%s%piece%s%based%s%on%s%the</span><br/>
+<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span><span class="comment">%s%%s%%s%location%s%of%s%the%s%piece.%s%*/</span><br/>
+<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span><br/>
+<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span><span class="keyword">int</span>%s%pawn_pcsq[64]%s%=%s%{<br/>
+<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span>%t%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,<br/>
+<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span>%t%%s%%s%5,%s%%s%10,%s%%s%15,%s%%s%20,%s%%s%20,%s%%s%15,%s%%s%10,%s%%s%%s%5,<br/>
+<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span>%t%%s%%s%4,%s%%s%%s%8,%s%%s%12,%s%%s%16,%s%%s%16,%s%%s%12,%s%%s%%s%8,%s%%s%%s%4,<br/>
+<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span>%t%%s%%s%3,%s%%s%%s%6,%s%%s%%s%9,%s%%s%12,%s%%s%12,%s%%s%%s%9,%s%%s%%s%6,%s%%s%%s%3,<br/>
+<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span>%t%%s%%s%2,%s%%s%%s%4,%s%%s%%s%6,%s%%s%%s%8,%s%%s%%s%8,%s%%s%%s%6,%s%%s%%s%4,%s%%s%%s%2,<br/>
+<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span>%t%%s%%s%1,%s%%s%%s%2,%s%%s%%s%3,%s%-10,%s%-10,%s%%s%%s%3,%s%%s%%s%2,%s%%s%%s%1,<br/>
+<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span>%t%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%-40,%s%-40,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,<br/>
+<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span>%t%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0<br/>
+<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span>};<br/>
+<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span><br/>
+<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span><span class="keyword">int</span>%s%knight_pcsq[64]%s%=%s%{<br/>
+<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span>%t%-10,%s%-10,%s%-10,%s%-10,%s%-10,%s%-10,%s%-10,%s%-10,<br/>
+<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%-10,<br/>
+<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%10,%s%%s%10,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%10,%s%%s%10,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="69"/><span style="color:red">%s%%s%%s%%s%69%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="70"/><span style="color:red">%s%%s%%s%%s%70%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%-10,<br/>
+<a name="71"/><span style="color:red">%s%%s%%s%%s%71%s%%s%</span>%t%-10,%s%-30,%s%-10,%s%-10,%s%-10,%s%-10,%s%-30,%s%-10<br/>
+<a name="72"/><span style="color:red">%s%%s%%s%%s%72%s%%s%</span>};<br/>
+<a name="73"/><span style="color:red">%s%%s%%s%%s%73%s%%s%</span><br/>
+<a name="74"/><span style="color:red">%s%%s%%s%%s%74%s%%s%</span><span class="keyword">int</span>%s%bishop_pcsq[64]%s%=%s%{<br/>
+<a name="75"/><span style="color:red">%s%%s%%s%%s%75%s%%s%</span>%t%-10,%s%-10,%s%-10,%s%-10,%s%-10,%s%-10,%s%-10,%s%-10,<br/>
+<a name="76"/><span style="color:red">%s%%s%%s%%s%76%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%-10,<br/>
+<a name="77"/><span style="color:red">%s%%s%%s%%s%77%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="78"/><span style="color:red">%s%%s%%s%%s%78%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%10,%s%%s%10,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="79"/><span style="color:red">%s%%s%%s%%s%79%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%10,%s%%s%10,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="80"/><span style="color:red">%s%%s%%s%%s%80%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%5,%s%%s%%s%0,%s%-10,<br/>
+<a name="81"/><span style="color:red">%s%%s%%s%%s%81%s%%s%</span>%t%-10,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%%s%%s%0,%s%-10,<br/>
+<a name="82"/><span style="color:red">%s%%s%%s%%s%82%s%%s%</span>%t%-10,%s%-10,%s%-20,%s%-10,%s%-10,%s%-20,%s%-10,%s%-10<br/>
+<a name="83"/><span style="color:red">%s%%s%%s%%s%83%s%%s%</span>};<br/>
+<a name="84"/><span style="color:red">%s%%s%%s%%s%84%s%%s%</span><br/>
+<a name="85"/><span style="color:red">%s%%s%%s%%s%85%s%%s%</span><span class="keyword">int</span>%s%king_pcsq[64]%s%=%s%{<br/>
+<a name="86"/><span style="color:red">%s%%s%%s%%s%86%s%%s%</span>%t%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,<br/>
+<a name="87"/><span style="color:red">%s%%s%%s%%s%87%s%%s%</span>%t%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,<br/>
+<a name="88"/><span style="color:red">%s%%s%%s%%s%88%s%%s%</span>%t%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,<br/>
+<a name="89"/><span style="color:red">%s%%s%%s%%s%89%s%%s%</span>%t%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,<br/>
+<a name="90"/><span style="color:red">%s%%s%%s%%s%90%s%%s%</span>%t%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,<br/>
+<a name="91"/><span style="color:red">%s%%s%%s%%s%91%s%%s%</span>%t%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,%s%-40,<br/>
+<a name="92"/><span style="color:red">%s%%s%%s%%s%92%s%%s%</span>%t%-20,%s%-20,%s%-20,%s%-20,%s%-20,%s%-20,%s%-20,%s%-20,<br/>
+<a name="93"/><span style="color:red">%s%%s%%s%%s%93%s%%s%</span>%t%%s%%s%0,%s%%s%20,%s%%s%40,%s%-20,%s%%s%%s%0,%s%-20,%s%%s%40,%s%%s%20<br/>
+<a name="94"/><span style="color:red">%s%%s%%s%%s%94%s%%s%</span>};<br/>
+<a name="95"/><span style="color:red">%s%%s%%s%%s%95%s%%s%</span><br/>
+<a name="96"/><span style="color:red">%s%%s%%s%%s%96%s%%s%</span><span class="keyword">int</span>%s%king_endgame_pcsq[64]%s%=%s%{<br/>
+<a name="97"/><span style="color:red">%s%%s%%s%%s%97%s%%s%</span>%t%%s%%s%0,%s%%s%10,%s%%s%20,%s%%s%30,%s%%s%30,%s%%s%20,%s%%s%10,%s%%s%%s%0,<br/>
+<a name="98"/><span style="color:red">%s%%s%%s%%s%98%s%%s%</span>%t%%s%10,%s%%s%20,%s%%s%30,%s%%s%40,%s%%s%40,%s%%s%30,%s%%s%20,%s%%s%10,<br/>
+<a name="99"/><span style="color:red">%s%%s%%s%%s%99%s%%s%</span>%t%%s%20,%s%%s%30,%s%%s%40,%s%%s%50,%s%%s%50,%s%%s%40,%s%%s%30,%s%%s%20,<br/>
+<a name="100"/><span style="color:red">%s%%s%%s%100%s%%s%</span>%t%%s%30,%s%%s%40,%s%%s%50,%s%%s%60,%s%%s%60,%s%%s%50,%s%%s%40,%s%%s%30,<br/>
+<a name="101"/><span style="color:red">%s%%s%%s%101%s%%s%</span>%t%%s%30,%s%%s%40,%s%%s%50,%s%%s%60,%s%%s%60,%s%%s%50,%s%%s%40,%s%%s%30,<br/>
+<a name="102"/><span style="color:red">%s%%s%%s%102%s%%s%</span>%t%%s%20,%s%%s%30,%s%%s%40,%s%%s%50,%s%%s%50,%s%%s%40,%s%%s%30,%s%%s%20,<br/>
+<a name="103"/><span style="color:red">%s%%s%%s%103%s%%s%</span>%t%%s%10,%s%%s%20,%s%%s%30,%s%%s%40,%s%%s%40,%s%%s%30,%s%%s%20,%s%%s%10,<br/>
+<a name="104"/><span style="color:red">%s%%s%%s%104%s%%s%</span>%t%%s%%s%0,%s%%s%10,%s%%s%20,%s%%s%30,%s%%s%30,%s%%s%20,%s%%s%10,%s%%s%%s%0<br/>
+<a name="105"/><span style="color:red">%s%%s%%s%105%s%%s%</span>};<br/>
+<a name="106"/><span style="color:red">%s%%s%%s%106%s%%s%</span><br/>
+<a name="107"/><span style="color:red">%s%%s%%s%107%s%%s%</span><span class="comment">/*%s%The%s%flip%s%array%s%is%s%used%s%to%s%calculate%s%the%s%piece/square</span><br/>
+<a name="108"/><span style="color:red">%s%%s%%s%108%s%%s%</span><span class="comment">%s%%s%%s%values%s%for%s%`DARK%s%pieces.%s%The%s%piece/square%s%value%s%of%s%a</span><br/>
+<a name="109"/><span style="color:red">%s%%s%%s%109%s%%s%</span><span class="comment">%s%%s%%s%`LIGHT%s%pawn%s%is%s%pawn_pcsq[sq]%s%and%s%the%s%value%s%of%s%a%s%`DARK</span><br/>
+<a name="110"/><span style="color:red">%s%%s%%s%110%s%%s%</span><span class="comment">%s%%s%%s%pawn%s%is%s%pawn_pcsq[flip[sq]]%s%*/</span><br/>
+<a name="111"/><span style="color:red">%s%%s%%s%111%s%%s%</span><span class="keyword">int</span>%s%flip[64]%s%=%s%{<br/>
+<a name="112"/><span style="color:red">%s%%s%%s%112%s%%s%</span>%t%%s%56,%s%%s%57,%s%%s%58,%s%%s%59,%s%%s%60,%s%%s%61,%s%%s%62,%s%%s%63,<br/>
+<a name="113"/><span style="color:red">%s%%s%%s%113%s%%s%</span>%t%%s%48,%s%%s%49,%s%%s%50,%s%%s%51,%s%%s%52,%s%%s%53,%s%%s%54,%s%%s%55,<br/>
+<a name="114"/><span style="color:red">%s%%s%%s%114%s%%s%</span>%t%%s%40,%s%%s%41,%s%%s%42,%s%%s%43,%s%%s%44,%s%%s%45,%s%%s%46,%s%%s%47,<br/>
+<a name="115"/><span style="color:red">%s%%s%%s%115%s%%s%</span>%t%%s%32,%s%%s%33,%s%%s%34,%s%%s%35,%s%%s%36,%s%%s%37,%s%%s%38,%s%%s%39,<br/>
+<a name="116"/><span style="color:red">%s%%s%%s%116%s%%s%</span>%t%%s%24,%s%%s%25,%s%%s%26,%s%%s%27,%s%%s%28,%s%%s%29,%s%%s%30,%s%%s%31,<br/>
+<a name="117"/><span style="color:red">%s%%s%%s%117%s%%s%</span>%t%%s%16,%s%%s%17,%s%%s%18,%s%%s%19,%s%%s%20,%s%%s%21,%s%%s%22,%s%%s%23,<br/>
+<a name="118"/><span style="color:red">%s%%s%%s%118%s%%s%</span>%t%%s%%s%8,%s%%s%%s%9,%s%%s%10,%s%%s%11,%s%%s%12,%s%%s%13,%s%%s%14,%s%%s%15,<br/>
+<a name="119"/><span style="color:red">%s%%s%%s%119%s%%s%</span>%t%%s%%s%0,%s%%s%%s%1,%s%%s%%s%2,%s%%s%%s%3,%s%%s%%s%4,%s%%s%%s%5,%s%%s%%s%6,%s%%s%%s%7<br/>
+<a name="120"/><span style="color:red">%s%%s%%s%120%s%%s%</span>};<br/>
+<a name="121"/><span style="color:red">%s%%s%%s%121%s%%s%</span><br/>
+<a name="122"/><span style="color:red">%s%%s%%s%122%s%%s%</span><span class="comment">/*%s%pawn_rank[x][y]%s%is%s%the%s%rank%s%of%s%the%s%least%s%advanced%s%pawn%s%of%s%color%s%x%s%on%s%file</span><br/>
+<a name="123"/><span style="color:red">%s%%s%%s%123%s%%s%</span><span class="comment">%s%%s%%s%y%s%-%s%1.%s%There%s%are%s%"buffer%s%files"%s%on%s%the%s%left%s%and%s%right%s%to%s%avoid%s%special-case</span><br/>
+<a name="124"/><span style="color:red">%s%%s%%s%124%s%%s%</span><span class="comment">%s%%s%%s%logic%s%later.%s%If%s%there's%s%no%s%pawn%s%on%s%a%s%rank,%s%we%s%pretend%s%the%s%pawn%s%is</span><br/>
+<a name="125"/><span style="color:red">%s%%s%%s%125%s%%s%</span><span class="comment">%s%%s%%s%impossibly%s%far%s%advanced%s%(0%s%for%s%`LIGHT%s%and%s%7%s%for%s%`DARK).%s%This%s%makes%s%it%s%easy%s%to</span><br/>
+<a name="126"/><span style="color:red">%s%%s%%s%126%s%%s%</span><span class="comment">%s%%s%%s%test%s%for%s%pawns%s%on%s%a%s%rank%s%and%s%it%s%simplifies%s%some%s%pawn%s%evaluation%s%code.%s%*/</span><br/>
+<a name="127"/><span style="color:red">%s%%s%%s%127%s%%s%</span><span class="keyword">int</span>%s%pawn_rank[2][10];<br/>
+<a name="128"/><span style="color:red">%s%%s%%s%128%s%%s%</span><br/>
+<a name="129"/><span style="color:red">%s%%s%%s%129%s%%s%</span><span class="keyword">int</span>%s%piece_mat[2];%s%%s%<span class="comment">/*%s%the%s%value%s%of%s%a%s%side's%s%pieces%s%*/</span><br/>
+<a name="130"/><span style="color:red">%s%%s%%s%130%s%%s%</span><span class="keyword">int</span>%s%pawn_mat[2];%s%%s%<span class="comment">/*%s%the%s%value%s%of%s%a%s%side's%s%pawns%s%*/</span><br/>
+<a name="131"/><span style="color:red">%s%%s%%s%131%s%%s%</span>%t%<br/>
+<a name="132"/><span style="color:red">%s%%s%%s%132%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">void</span>%s%print_board(<span class="keyword">bit</span>%s%color_in[64],%s%<span class="keyword">bit</span>[2:0]%s%piece_in[64]);<br/>
+<a name="133"/><span style="color:red">%s%%s%%s%133%s%%s%</span>%t%%t%<br/>
+<a name="134"/><span style="color:red">%s%%s%%s%134%s%%s%</span>%t%%t%<span class="keyword">string</span>%s%w_piece_char%s%=%s%<span class="literal">"PNBRQK"</span>%s%;<br/>
+<a name="135"/><span style="color:red">%s%%s%%s%135%s%%s%</span>%t%%t%<span class="keyword">string</span>%s%b_piece_char%s%=%s%<span class="literal">"pnbrqk"</span>%s%;<br/>
+<a name="136"/><span style="color:red">%s%%s%%s%136%s%%s%</span>%t%%t%<br/>
+<a name="137"/><span style="color:red">%s%%s%%s%137%s%%s%</span>%t%%t%$write(<span class="literal">"*******************%s%BOARD%s%*********************%s%\n"</span>);<br/>
+<a name="138"/><span style="color:red">%s%%s%%s%138%s%%s%</span>%t%%t%<br/>
+<a name="139"/><span style="color:red">%s%%s%%s%139%s%%s%</span><br/>
+<a name="140"/><span style="color:red">%s%%s%%s%140%s%%s%</span><br/>
+<a name="141"/><span style="color:red">%s%%s%%s%141%s%%s%</span>%t%%t%$write(<span class="literal">"8%s%"</span>);<br/>
+<a name="142"/><span style="color:red">%s%%s%%s%142%s%%s%</span>%t%%t%<span class="keyword">for</span>%s%(<span class="keyword">int</span>%s%i%s%=%s%0;%s%i%s%&lt;%s%64;%s%++i)%s%<br/>
+<a name="143"/><span style="color:red">%s%%s%%s%143%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="144"/><span style="color:red">%s%%s%%s%144%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>%s%(piece_in[i]%s%==%s%6)%s%%t%%t%%t%%t%%t%<br/>
+<a name="145"/><span style="color:red">%s%%s%%s%145%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"%s%."</span>);<br/>
+<a name="146"/><span style="color:red">%s%%s%%s%146%s%%s%</span>%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>(color_in[i]%s%==%s%0)<br/>
+<a name="147"/><span style="color:red">%s%%s%%s%147%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"%s%%c"</span>,%s%w_piece_char.getc(piece_in[i]));<br/>
+<a name="148"/><span style="color:red">%s%%s%%s%148%s%%s%</span>%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>(color_in[i]%s%==%s%1)<br/>
+<a name="149"/><span style="color:red">%s%%s%%s%149%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"%s%%c"</span>,%s%b_piece_char.getc(piece_in[i]));<br/>
+<a name="150"/><span style="color:red">%s%%s%%s%150%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="151"/><span style="color:red">%s%%s%%s%151%s%%s%</span>%t%%t%%t%%t%<br/>
+<a name="152"/><span style="color:red">%s%%s%%s%152%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>%s%((i%s%+%s%1)%s%%%s%8%s%==%s%0%s%&amp;&amp;%s%i%s%!=%s%63)<br/>
+<a name="153"/><span style="color:red">%s%%s%%s%153%s%%s%</span>%t%%t%%t%%t%$write(<span class="literal">"\n%d%s%"</span>,%s%7%s%-%s%(i/8));<br/>
+<a name="154"/><span style="color:red">%s%%s%%s%154%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="155"/><span style="color:red">%s%%s%%s%155%s%%s%</span>%t%%t%$write(<span class="literal">"\n%s%a%s%b%s%c%s%d%s%e%s%f%s%g%s%h\n\n"</span>);<br/>
+<a name="156"/><span style="color:red">%s%%s%%s%156%s%%s%</span>%t%<span class="keyword">endfunction</span>%s%:%s%print_board<br/>
+<a name="157"/><span style="color:red">%s%%s%%s%157%s%%s%</span><br/>
+<a name="158"/><span style="color:red">%s%%s%%s%158%s%%s%</span><br/>
+<a name="159"/><span style="color:red">%s%%s%%s%159%s%%s%</span>%t%<br/>
+<a name="160"/><span style="color:red">%s%%s%%s%160%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%predict(<span class="keyword">bit</span>%s%color[64],%s%<span class="keyword">bit</span>[2:0]%s%piece[64],%s%<span class="keyword">bit</span>%s%side);<br/>
+<a name="161"/><span style="color:red">%s%%s%%s%161%s%%s%</span><br/>
+<a name="162"/><span style="color:red">%s%%s%%s%162%s%%s%</span>%t%<span class="keyword">int</span>%s%i;<br/>
+<a name="163"/><span style="color:red">%s%%s%%s%163%s%%s%</span>%t%<span class="keyword">int</span>%s%f;%s%%s%<span class="comment">/*%s%file%s%*/</span><br/>
+<a name="164"/><span style="color:red">%s%%s%%s%164%s%%s%</span>%t%<span class="keyword">int</span>%s%score[2];%s%%s%<span class="comment">/*%s%each%s%side's%s%score%s%*/</span><br/>
+<a name="165"/><span style="color:red">%s%%s%%s%165%s%%s%</span><br/>
+<a name="166"/><span style="color:red">%s%%s%%s%166%s%%s%</span>%t%<span class="comment">//Moje%s%promenjive%s%da%s%se%s%lakse%s%debaguje</span><br/>
+<a name="167"/><span style="color:red">%s%%s%%s%167%s%%s%</span>%t%<span class="keyword">int</span>%s%s_row_mat[2];<br/>
+<a name="168"/><span style="color:red">%s%%s%%s%168%s%%s%</span>%t%<span class="keyword">int</span>%s%s_soft_mat[2];<br/>
+<a name="169"/><span style="color:red">%s%%s%%s%169%s%%s%</span>%t%<span class="keyword">int</span>%s%s_pawns[2];%s%<br/>
+<a name="170"/><span style="color:red">%s%%s%%s%170%s%%s%</span>%t%<span class="keyword">int</span>%s%s_king[2];<br/>
+<a name="171"/><span style="color:red">%s%%s%%s%171%s%%s%</span>%t%<br/>
+<a name="172"/><span style="color:red">%s%%s%%s%172%s%%s%</span>%t%s_row_mat[0]%s%=%s%0;%t%s_row_mat[1]%s%=%s%0;<br/>
+<a name="173"/><span style="color:red">%s%%s%%s%173%s%%s%</span>%t%s_soft_mat[0]%s%=%s%0;%s%%s%%s%%t%s_soft_mat[1]%s%=%s%0;<br/>
+<a name="174"/><span style="color:red">%s%%s%%s%174%s%%s%</span>%t%s_pawns[0]%s%=%s%0;%s%%t%s_pawns[1]%s%=%s%0;%s%<br/>
+<a name="175"/><span style="color:red">%s%%s%%s%175%s%%s%</span>%t%s_king[0]%s%=%s%0;%s%%t%%t%s_king[1]%s%=%s%0;<br/>
+<a name="176"/><span style="color:red">%s%%s%%s%176%s%%s%</span>%t%<br/>
+<a name="177"/><span style="color:red">%s%%s%%s%177%s%%s%</span>%t%<br/>
+<a name="178"/><span style="color:red">%s%%s%%s%178%s%%s%</span>%t%<br/>
+<a name="179"/><span style="color:red">%s%%s%%s%179%s%%s%</span>%t%$display(<span class="literal">"%0t%s%Predictor%s%table"</span>,%s%$<span class="keyword">time</span>);<br/>
+<a name="180"/><span style="color:red">%s%%s%%s%180%s%%s%</span>%t%print_board(color,%s%piece);<br/>
+<a name="181"/><span style="color:red">%s%%s%%s%181%s%%s%</span>%t%<br/>
+<a name="182"/><span style="color:red">%s%%s%%s%182%s%%s%</span>%t%<br/>
+<a name="183"/><span style="color:red">%s%%s%%s%183%s%%s%</span>%t%<span class="comment">//%s%this%s%is%s%the%s%first%s%pass:%s%set%s%up%s%pawn_rank,%s%piece_mat,%s%and%s%pawn_mat.</span><br/>
+<a name="184"/><span style="color:red">%s%%s%%s%184%s%%s%</span>%t%<span class="keyword">for</span>%s%(i%s%=%s%0;%s%i%s%&lt;%s%10;%s%++i)%s%<br/>
+<a name="185"/><span style="color:red">%s%%s%%s%185%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="186"/><span style="color:red">%s%%s%%s%186%s%%s%</span>%t%%t%pawn_rank[`LIGHT][i]%s%=%s%0;<br/>
+<a name="187"/><span style="color:red">%s%%s%%s%187%s%%s%</span>%t%%t%pawn_rank[`DARK][i]%s%=%s%7;<br/>
+<a name="188"/><span style="color:red">%s%%s%%s%188%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="189"/><span style="color:red">%s%%s%%s%189%s%%s%</span>%t%<br/>
+<a name="190"/><span style="color:red">%s%%s%%s%190%s%%s%</span>%t%piece_mat[`LIGHT]%s%=%s%0;<br/>
+<a name="191"/><span style="color:red">%s%%s%%s%191%s%%s%</span>%t%piece_mat[`DARK]%s%=%s%0;<br/>
+<a name="192"/><span style="color:red">%s%%s%%s%192%s%%s%</span>%t%pawn_mat[`LIGHT]%s%=%s%0;<br/>
+<a name="193"/><span style="color:red">%s%%s%%s%193%s%%s%</span>%t%pawn_mat[`DARK]%s%=%s%0;<br/>
+<a name="194"/><span style="color:red">%s%%s%%s%194%s%%s%</span>%t%<span class="keyword">for</span>%s%(i%s%=%s%0;%s%i%s%&lt;%s%64;%s%++i)%s%<br/>
+<a name="195"/><span style="color:red">%s%%s%%s%195%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="196"/><span style="color:red">%s%%s%%s%196%s%%s%</span>%t%%t%<span class="keyword">if</span>%s%(piece[i]%s%==%s%`EMPTY)<br/>
+<a name="197"/><span style="color:red">%s%%s%%s%197%s%%s%</span>%t%%t%%t%<span class="keyword">continue</span>;<br/>
+<a name="198"/><span style="color:red">%s%%s%%s%198%s%%s%</span>%t%%t%<span class="keyword">if</span>%s%(piece[i]%s%==%s%`PAWN)%s%<br/>
+<a name="199"/><span style="color:red">%s%%s%%s%199%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="200"/><span style="color:red">%s%%s%%s%200%s%%s%</span>%t%%t%%t%pawn_mat[color[i]]%s%+=%s%piece_value[`PAWN];<br/>
+<a name="201"/><span style="color:red">%s%%s%%s%201%s%%s%</span>%t%%t%%t%f%s%=%s%COL(i)%s%+%s%1;%s%%s%<span class="comment">/*%s%add%s%1%s%because%s%of%s%the%s%extra%s%file%s%in%s%the%s%array%s%*/</span><br/>
+<a name="202"/><span style="color:red">%s%%s%%s%202%s%%s%</span>%t%%t%%t%<span class="keyword">if</span>%s%(color[i]%s%==%s%`LIGHT)%s%<br/>
+<a name="203"/><span style="color:red">%s%%s%%s%203%s%%s%</span>%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="204"/><span style="color:red">%s%%s%%s%204%s%%s%</span>%t%%t%%t%%t%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%&lt;%s%ROW(i))<br/>
+<a name="205"/><span style="color:red">%s%%s%%s%205%s%%s%</span>%t%%t%%t%%t%%t%pawn_rank[`LIGHT][f]%s%=%s%ROW(i);<br/>
+<a name="206"/><span style="color:red">%s%%s%%s%206%s%%s%</span>%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="207"/><span style="color:red">%s%%s%%s%207%s%%s%</span>%t%%t%%t%<span class="keyword">else</span>%s%<br/>
+<a name="208"/><span style="color:red">%s%%s%%s%208%s%%s%</span>%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="209"/><span style="color:red">%s%%s%%s%209%s%%s%</span>%t%%t%%t%%t%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%&gt;%s%ROW(i))<br/>
+<a name="210"/><span style="color:red">%s%%s%%s%210%s%%s%</span>%t%%t%%t%%t%%t%pawn_rank[`DARK][f]%s%=%s%ROW(i);<br/>
+<a name="211"/><span style="color:red">%s%%s%%s%211%s%%s%</span>%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="212"/><span style="color:red">%s%%s%%s%212%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="213"/><span style="color:red">%s%%s%%s%213%s%%s%</span>%t%%t%<span class="keyword">else</span><br/>
+<a name="214"/><span style="color:red">%s%%s%%s%214%s%%s%</span>%t%%t%%t%piece_mat[color[i]]%s%+=%s%piece_value[piece[i]];<br/>
+<a name="215"/><span style="color:red">%s%%s%%s%215%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="216"/><span style="color:red">%s%%s%%s%216%s%%s%</span><br/>
+<a name="217"/><span style="color:red">%s%%s%%s%217%s%%s%</span>%t%<span class="comment">/*%s%this%s%is%s%the%s%second%s%pass:%s%evaluate%s%each%s%piece%s%*/</span><br/>
+<a name="218"/><span style="color:red">%s%%s%%s%218%s%%s%</span>%t%score[`LIGHT]%s%=%s%piece_mat[`LIGHT]%s%+%s%pawn_mat[`LIGHT];<br/>
+<a name="219"/><span style="color:red">%s%%s%%s%219%s%%s%</span>%t%score[`DARK]%s%=%s%piece_mat[`DARK]%s%+%s%pawn_mat[`DARK];<br/>
+<a name="220"/><span style="color:red">%s%%s%%s%220%s%%s%</span>%t%<br/>
+<a name="221"/><span style="color:red">%s%%s%%s%221%s%%s%</span>%t%s_row_mat[`LIGHT]%s%+=%s%piece_mat[`LIGHT];<br/>
+<a name="222"/><span style="color:red">%s%%s%%s%222%s%%s%</span>%t%s_row_mat[`DARK]%s%+=%s%piece_mat[`DARK];<br/>
+<a name="223"/><span style="color:red">%s%%s%%s%223%s%%s%</span><br/>
+<a name="224"/><span style="color:red">%s%%s%%s%224%s%%s%</span>%t%s_pawns[`LIGHT]%s%+=%s%pawn_mat[`LIGHT];<br/>
+<a name="225"/><span style="color:red">%s%%s%%s%225%s%%s%</span>%t%s_pawns[`DARK]%s%+=%s%pawn_mat[`DARK];<br/>
+<a name="226"/><span style="color:red">%s%%s%%s%226%s%%s%</span>%t%<br/>
+<a name="227"/><span style="color:red">%s%%s%%s%227%s%%s%</span>%t%<br/>
+<a name="228"/><span style="color:red">%s%%s%%s%228%s%%s%</span>%t%<br/>
+<a name="229"/><span style="color:red">%s%%s%%s%229%s%%s%</span>%t%<span class="keyword">for</span>%s%(i%s%=%s%0;%s%i%s%&lt;%s%64;%s%++i)%s%<br/>
+<a name="230"/><span style="color:red">%s%%s%%s%230%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="231"/><span style="color:red">%s%%s%%s%231%s%%s%</span>%t%%t%<span class="keyword">if</span>%s%(piece[i]%s%==%s%`EMPTY)<br/>
+<a name="232"/><span style="color:red">%s%%s%%s%232%s%%s%</span>%t%%t%%t%<span class="keyword">continue</span>;<br/>
+<a name="233"/><span style="color:red">%s%%s%%s%233%s%%s%</span>%t%%t%<span class="keyword">if</span>%s%(color[i]%s%==%s%`LIGHT)%s%<br/>
+<a name="234"/><span style="color:red">%s%%s%%s%234%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="235"/><span style="color:red">%s%%s%%s%235%s%%s%</span>%t%%t%%t%<span class="keyword">case</span>%s%(piece[i])%s%%t%%t%%t%<br/>
+<a name="236"/><span style="color:red">%s%%s%%s%236%s%%s%</span>%t%%t%%t%`PAWN:<br/>
+<a name="237"/><span style="color:red">%s%%s%%s%237%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="238"/><span style="color:red">%s%%s%%s%238%s%%s%</span>%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%eval_light_pawn(i);<br/>
+<a name="239"/><span style="color:red">%s%%s%%s%239%s%%s%</span>%t%%t%%t%%t%%t%s_pawns[`LIGHT]%s%+=%s%eval_light_pawn(i);<span class="comment">//provera</span><br/>
+<a name="240"/><span style="color:red">%s%%s%%s%240%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="241"/><span style="color:red">%s%%s%%s%241%s%%s%</span>%t%%t%%t%`KNIGHT:<br/>
+<a name="242"/><span style="color:red">%s%%s%%s%242%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="243"/><span style="color:red">%s%%s%%s%243%s%%s%</span>%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%knight_pcsq[i];<br/>
+<a name="244"/><span style="color:red">%s%%s%%s%244%s%%s%</span>%t%%t%%t%%t%%t%s_soft_mat[`LIGHT]%s%+=%s%knight_pcsq[i];%s%<span class="comment">//%s%provera</span><br/>
+<a name="245"/><span style="color:red">%s%%s%%s%245%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span>%t%<br/>
+<a name="246"/><span style="color:red">%s%%s%%s%246%s%%s%</span>%t%%t%%t%`BISHOP:<br/>
+<a name="247"/><span style="color:red">%s%%s%%s%247%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="248"/><span style="color:red">%s%%s%%s%248%s%%s%</span>%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%bishop_pcsq[i];<br/>
+<a name="249"/><span style="color:red">%s%%s%%s%249%s%%s%</span>%t%%t%%t%%t%%t%s_soft_mat[`LIGHT]%s%+=%s%bishop_pcsq[i];%s%<span class="comment">//%s%provera</span><br/>
+<a name="250"/><span style="color:red">%s%%s%%s%250%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="251"/><span style="color:red">%s%%s%%s%251%s%%s%</span>%t%%t%%t%`ROOK:%s%%t%%t%%t%%t%<br/>
+<a name="252"/><span style="color:red">%s%%s%%s%252%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="253"/><span style="color:red">%s%%s%%s%253%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][COL(i)%s%+%s%1]%s%==%s%0)%s%<br/>
+<a name="254"/><span style="color:red">%s%%s%%s%254%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="255"/><span style="color:red">%s%%s%%s%255%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(pawn_rank[`DARK][COL(i)%s%+%s%1]%s%==%s%7)%s%<span class="keyword">begin</span><br/>
+<a name="256"/><span style="color:red">%s%%s%%s%256%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%`ROOK_OPEN_FILE_BONUS;<br/>
+<a name="257"/><span style="color:red">%s%%s%%s%257%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%s_soft_mat[`LIGHT]%s%+=%s%`ROOK_OPEN_FILE_BONUS;%s%<span class="comment">//%s%provera</span><br/>
+<a name="258"/><span style="color:red">%s%%s%%s%258%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="259"/><span style="color:red">%s%%s%%s%259%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">begin</span><br/>
+<a name="260"/><span style="color:red">%s%%s%%s%260%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%`ROOK_SEMI_OPEN_FILE_BONUS;%t%%t%%t%%t%%t%%t%<br/>
+<a name="261"/><span style="color:red">%s%%s%%s%261%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%s_soft_mat[`LIGHT]%s%+=%s%`ROOK_SEMI_OPEN_FILE_BONUS;%s%<span class="comment">//%s%provera</span><br/>
+<a name="262"/><span style="color:red">%s%%s%%s%262%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="263"/><span style="color:red">%s%%s%%s%263%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="264"/><span style="color:red">%s%%s%%s%264%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(ROW(i)%s%==%s%1)%s%<span class="keyword">begin</span><br/>
+<a name="265"/><span style="color:red">%s%%s%%s%265%s%%s%</span>%t%%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%`ROOK_ON_SEVENTH_BONUS;<br/>
+<a name="266"/><span style="color:red">%s%%s%%s%266%s%%s%</span>%t%%t%%t%%t%%t%%t%s_soft_mat[`LIGHT]%s%+=%s%`ROOK_ON_SEVENTH_BONUS;%s%<span class="comment">//%s%provera%t%s_mat[LIGHT]%s%+=%s%ROOK_ON_SEVENTH_BONUS;%s%//%s%provera%t%</span><br/>
+<a name="267"/><span style="color:red">%s%%s%%s%267%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="268"/><span style="color:red">%s%%s%%s%268%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span>%t%%t%%t%%t%<br/>
+<a name="269"/><span style="color:red">%s%%s%%s%269%s%%s%</span>%t%%t%%t%`KING:<br/>
+<a name="270"/><span style="color:red">%s%%s%%s%270%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="271"/><span style="color:red">%s%%s%%s%271%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(piece_mat[`DARK]%s%&lt;=%s%1200)%s%<span class="keyword">begin</span><br/>
+<a name="272"/><span style="color:red">%s%%s%%s%272%s%%s%</span>%t%%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%king_endgame_pcsq[i];<br/>
+<a name="273"/><span style="color:red">%s%%s%%s%273%s%%s%</span>%t%%t%%t%%t%%t%%t%s_king[`LIGHT]%s%+=%s%king_endgame_pcsq[i];<br/>
+<a name="274"/><span style="color:red">%s%%s%%s%274%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="275"/><span style="color:red">%s%%s%%s%275%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">begin</span><br/>
+<a name="276"/><span style="color:red">%s%%s%%s%276%s%%s%</span>%t%%t%%t%%t%%t%%t%score[`LIGHT]%s%+=%s%eval_light_king(i);<br/>
+<a name="277"/><span style="color:red">%s%%s%%s%277%s%%s%</span>%t%%t%%t%%t%%t%%t%s_king[`LIGHT]%s%+=%s%eval_light_king(i);<br/>
+<a name="278"/><span style="color:red">%s%%s%%s%278%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="279"/><span style="color:red">%s%%s%%s%279%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="280"/><span style="color:red">%s%%s%%s%280%s%%s%</span>%t%%t%%t%<span class="keyword">endcase</span><br/>
+<a name="281"/><span style="color:red">%s%%s%%s%281%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="282"/><span style="color:red">%s%%s%%s%282%s%%s%</span>%t%%t%<span class="keyword">else</span>%s%<br/>
+<a name="283"/><span style="color:red">%s%%s%%s%283%s%%s%</span>%t%%t%<span class="keyword">begin</span><br/>
+<a name="284"/><span style="color:red">%s%%s%%s%284%s%%s%</span>%t%%t%%t%<span class="keyword">case</span>%s%(piece[i])<br/>
+<a name="285"/><span style="color:red">%s%%s%%s%285%s%%s%</span>%t%%t%%t%`PAWN:<br/>
+<a name="286"/><span style="color:red">%s%%s%%s%286%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="287"/><span style="color:red">%s%%s%%s%287%s%%s%</span>%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%eval_dark_pawn(i);<br/>
+<a name="288"/><span style="color:red">%s%%s%%s%288%s%%s%</span>%t%%t%%t%%t%%t%s_pawns[`DARK]%s%+=%s%eval_dark_pawn(i);%t%<span class="comment">//provera</span><br/>
+<a name="289"/><span style="color:red">%s%%s%%s%289%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="290"/><span style="color:red">%s%%s%%s%290%s%%s%</span>%t%%t%%t%`KNIGHT:<br/>
+<a name="291"/><span style="color:red">%s%%s%%s%291%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="292"/><span style="color:red">%s%%s%%s%292%s%%s%</span>%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%knight_pcsq[flip[i]];<br/>
+<a name="293"/><span style="color:red">%s%%s%%s%293%s%%s%</span>%t%%t%%t%%t%%t%s_soft_mat[`DARK]%s%+=%s%knight_pcsq[flip[i]];%s%%s%%t%<span class="comment">//provera</span><br/>
+<a name="294"/><span style="color:red">%s%%s%%s%294%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="295"/><span style="color:red">%s%%s%%s%295%s%%s%</span>%t%%t%%t%`BISHOP:<br/>
+<a name="296"/><span style="color:red">%s%%s%%s%296%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="297"/><span style="color:red">%s%%s%%s%297%s%%s%</span>%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%bishop_pcsq[flip[i]];<br/>
+<a name="298"/><span style="color:red">%s%%s%%s%298%s%%s%</span>%t%%t%%t%%t%%t%s_soft_mat[`DARK]%s%+=%s%bishop_pcsq[flip[i]];%t%<span class="comment">//provera</span><br/>
+<a name="299"/><span style="color:red">%s%%s%%s%299%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="300"/><span style="color:red">%s%%s%%s%300%s%%s%</span>%t%%t%%t%`ROOK:<br/>
+<a name="301"/><span style="color:red">%s%%s%%s%301%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="302"/><span style="color:red">%s%%s%%s%302%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(pawn_rank[`DARK][COL(i)%s%+%s%1]%s%==%s%7)%s%<br/>
+<a name="303"/><span style="color:red">%s%%s%%s%303%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="304"/><span style="color:red">%s%%s%%s%304%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][COL(i)%s%+%s%1]%s%==%s%0)%s%<span class="keyword">begin</span><br/>
+<a name="305"/><span style="color:red">%s%%s%%s%305%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%`ROOK_OPEN_FILE_BONUS;<br/>
+<a name="306"/><span style="color:red">%s%%s%%s%306%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%s_soft_mat[`DARK]%s%+=%s%`ROOK_OPEN_FILE_BONUS;<br/>
+<a name="307"/><span style="color:red">%s%%s%%s%307%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="308"/><span style="color:red">%s%%s%%s%308%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">begin</span><br/>
+<a name="309"/><span style="color:red">%s%%s%%s%309%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%`ROOK_SEMI_OPEN_FILE_BONUS;<br/>
+<a name="310"/><span style="color:red">%s%%s%%s%310%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%s_soft_mat[`DARK]%s%+=%s%`ROOK_SEMI_OPEN_FILE_BONUS;<br/>
+<a name="311"/><span style="color:red">%s%%s%%s%311%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="312"/><span style="color:red">%s%%s%%s%312%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="313"/><span style="color:red">%s%%s%%s%313%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="314"/><span style="color:red">%s%%s%%s%314%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(ROW(i)%s%==%s%6)%s%<span class="keyword">begin</span><br/>
+<a name="315"/><span style="color:red">%s%%s%%s%315%s%%s%</span>%t%%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%`ROOK_ON_SEVENTH_BONUS;<br/>
+<a name="316"/><span style="color:red">%s%%s%%s%316%s%%s%</span>%t%%t%%t%%t%%t%%t%s_soft_mat[`DARK]%s%+=%s%`ROOK_ON_SEVENTH_BONUS;<br/>
+<a name="317"/><span style="color:red">%s%%s%%s%317%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="318"/><span style="color:red">%s%%s%%s%318%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="319"/><span style="color:red">%s%%s%%s%319%s%%s%</span>%t%%t%%t%`KING:<br/>
+<a name="320"/><span style="color:red">%s%%s%%s%320%s%%s%</span>%t%%t%%t%%t%<span class="keyword">begin</span><br/>
+<a name="321"/><span style="color:red">%s%%s%%s%321%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">if</span>%s%(piece_mat[`LIGHT]%s%&lt;=%s%1200)%s%<span class="keyword">begin</span><br/>
+<a name="322"/><span style="color:red">%s%%s%%s%322%s%%s%</span>%t%%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%king_endgame_pcsq[flip[i]];<br/>
+<a name="323"/><span style="color:red">%s%%s%%s%323%s%%s%</span>%t%%t%%t%%t%%t%%t%s_king[`DARK]%s%+=%s%king_endgame_pcsq[flip[i]];<br/>
+<a name="324"/><span style="color:red">%s%%s%%s%324%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="325"/><span style="color:red">%s%%s%%s%325%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">else</span>%s%<span class="keyword">begin</span><br/>
+<a name="326"/><span style="color:red">%s%%s%%s%326%s%%s%</span>%t%%t%%t%%t%%t%%t%score[`DARK]%s%+=%s%eval_dark_king(i);<br/>
+<a name="327"/><span style="color:red">%s%%s%%s%327%s%%s%</span>%t%%t%%t%%t%%t%%t%s_king[`DARK]%s%+=%s%eval_dark_king(i);<br/>
+<a name="328"/><span style="color:red">%s%%s%%s%328%s%%s%</span>%t%%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="329"/><span style="color:red">%s%%s%%s%329%s%%s%</span>%t%%t%%t%%t%<span class="keyword">end</span><br/>
+<a name="330"/><span style="color:red">%s%%s%%s%330%s%%s%</span>%t%%t%%t%<span class="keyword">endcase</span><br/>
+<a name="331"/><span style="color:red">%s%%s%%s%331%s%%s%</span>%t%%t%<span class="keyword">end</span><br/>
+<a name="332"/><span style="color:red">%s%%s%%s%332%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="333"/><span style="color:red">%s%%s%%s%333%s%%s%</span>%t%$display(<span class="literal">"PLAYS%s%----&gt;%s%%s%%s%s%"</span>,%s%side%s%?%s%<span class="literal">"CRNI"</span>:<span class="literal">"BELI"</span>);<br/>
+<a name="334"/><span style="color:red">%s%%s%%s%334%s%%s%</span>%t%$display(<span class="literal">"RAW_MATERIAL:%s%%t%Beli%s%=%s%%0d%s%%t%|%t%Crni%s%=%s%%0d%s%"</span>,%s%s_row_mat[`LIGHT],%s%s_row_mat[`DARK]%s%);<br/>
+<a name="335"/><span style="color:red">%s%%s%%s%335%s%%s%</span>%t%$display(<span class="literal">"SOFT_MATERIAL:%t%Beli%s%=%s%%0d%s%%t%|%t%Crni%s%=%s%%0d%s%"</span>,%s%s_soft_mat[`LIGHT],%s%s_soft_mat[`DARK]%s%);<br/>
+<a name="336"/><span style="color:red">%s%%s%%s%336%s%%s%</span>%t%$display(<span class="literal">"PAWNS:%s%%t%%t%%t%Beli%s%=%s%%0d%s%%t%|%t%Crni%s%=%s%%0d%s%"</span>,%s%s_pawns[`LIGHT],%s%s_pawns[`DARK]%s%);<br/>
+<a name="337"/><span style="color:red">%s%%s%%s%337%s%%s%</span>%t%$display(<span class="literal">"KING:%s%%t%%t%%t%Beli%s%=%s%%0d%s%%t%|%t%Crni%s%=%s%%0d%s%"</span>,%s%s_king[`LIGHT],%s%s_king[`DARK]%s%);<br/>
+<a name="338"/><span style="color:red">%s%%s%%s%338%s%%s%</span>%t%<br/>
+<a name="339"/><span style="color:red">%s%%s%%s%339%s%%s%</span>%t%<br/>
+<a name="340"/><span style="color:red">%s%%s%%s%340%s%%s%</span>%t%<br/>
+<a name="341"/><span style="color:red">%s%%s%%s%341%s%%s%</span>%t%<br/>
+<a name="342"/><span style="color:red">%s%%s%%s%342%s%%s%</span>%t%<span class="comment">/*%s%the%s%score[]%s%array%s%is%s%set,%s%now%s%return%s%the%s%score%s%relative</span><br/>
+<a name="343"/><span style="color:red">%s%%s%%s%343%s%%s%</span><span class="comment">%t%%s%%s%%s%to%s%the%s%side%s%to%s%move%s%*/</span><br/>
+<a name="344"/><span style="color:red">%s%%s%%s%344%s%%s%</span>%t%<span class="keyword">if</span>%s%(side%s%==%s%`LIGHT)<br/>
+<a name="345"/><span style="color:red">%s%%s%%s%345%s%%s%</span>%t%%t%<span class="keyword">return</span>%s%score[`LIGHT]%s%-%s%score[`DARK];<br/>
+<a name="346"/><span style="color:red">%s%%s%%s%346%s%%s%</span>%t%<span class="keyword">else</span>%t%<br/>
+<a name="347"/><span style="color:red">%s%%s%%s%347%s%%s%</span>%t%%t%<span class="keyword">return</span>%s%score[`DARK]%s%-%s%score[`LIGHT];<br/>
+<a name="348"/><span style="color:red">%s%%s%%s%348%s%%s%</span><br/>
+<a name="349"/><span style="color:red">%s%%s%%s%349%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%predict<br/>
+<a name="350"/><span style="color:red">%s%%s%%s%350%s%%s%</span><br/>
+<a name="351"/><span style="color:red">%s%%s%%s%351%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%eval_light_pawn(<span class="keyword">int</span>%s%sq);<br/>
+<a name="352"/><span style="color:red">%s%%s%%s%352%s%%s%</span><br/>
+<a name="353"/><span style="color:red">%s%%s%%s%353%s%%s%</span>%t%<span class="keyword">int</span>%s%r;%s%%s%<span class="comment">/*%s%the%s%value%s%to%s%return%s%*/</span><br/>
+<a name="354"/><span style="color:red">%s%%s%%s%354%s%%s%</span>%t%<span class="keyword">int</span>%s%f;%s%%s%<span class="comment">/*%s%the%s%pawn's%s%file%s%*/</span><br/>
+<a name="355"/><span style="color:red">%s%%s%%s%355%s%%s%</span><br/>
+<a name="356"/><span style="color:red">%s%%s%%s%356%s%%s%</span>%t%r%s%=%s%0;<br/>
+<a name="357"/><span style="color:red">%s%%s%%s%357%s%%s%</span>%t%f%s%=%s%COL(sq)%s%+%s%1;<br/>
+<a name="358"/><span style="color:red">%s%%s%%s%358%s%%s%</span><br/>
+<a name="359"/><span style="color:red">%s%%s%%s%359%s%%s%</span>%t%r%s%+=%s%pawn_pcsq[sq];<br/>
+<a name="360"/><span style="color:red">%s%%s%%s%360%s%%s%</span><br/>
+<a name="361"/><span style="color:red">%s%%s%%s%361%s%%s%</span>%t%<span class="comment">/*%s%if%s%there's%s%a%s%pawn%s%behind%s%this%s%one,%s%it's%s%doubled%s%*/</span><br/>
+<a name="362"/><span style="color:red">%s%%s%%s%362%s%%s%</span>%t%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%&gt;%s%ROW(sq))<br/>
+<a name="363"/><span style="color:red">%s%%s%%s%363%s%%s%</span>%t%%t%r%s%-=%s%`DOUBLED_PAWN_PENALTY;<br/>
+<a name="364"/><span style="color:red">%s%%s%%s%364%s%%s%</span><br/>
+<a name="365"/><span style="color:red">%s%%s%%s%365%s%%s%</span>%t%<span class="comment">/*%s%if%s%there%s%aren't%s%any%s%friendly%s%pawns%s%on%s%either%s%side%s%of</span><br/>
+<a name="366"/><span style="color:red">%s%%s%%s%366%s%%s%</span><span class="comment">%t%%s%%s%%s%this%s%one,%s%it's%s%isolated%s%*/</span><br/>
+<a name="367"/><span style="color:red">%s%%s%%s%367%s%%s%</span>%t%<span class="keyword">if</span>%s%((pawn_rank[`LIGHT][f%s%-%s%1]%s%==%s%0)%s%&amp;&amp;<br/>
+<a name="368"/><span style="color:red">%s%%s%%s%368%s%%s%</span>%t%%t%%t%(pawn_rank[`LIGHT][f%s%+%s%1]%s%==%s%0))<br/>
+<a name="369"/><span style="color:red">%s%%s%%s%369%s%%s%</span>%t%%t%r%s%-=%s%`ISOLATED_PAWN_PENALTY;<br/>
+<a name="370"/><span style="color:red">%s%%s%%s%370%s%%s%</span><br/>
+<a name="371"/><span style="color:red">%s%%s%%s%371%s%%s%</span>%t%<span class="comment">/*%s%if%s%it's%s%not%s%isolated,%s%it%s%might%s%be%s%backwards%s%*/</span><br/>
+<a name="372"/><span style="color:red">%s%%s%%s%372%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%((pawn_rank[`LIGHT][f%s%-%s%1]%s%&lt;%s%ROW(sq))%s%&amp;&amp;<br/>
+<a name="373"/><span style="color:red">%s%%s%%s%373%s%%s%</span>%t%%t%%t%(pawn_rank[`LIGHT][f%s%+%s%1]%s%&lt;%s%ROW(sq)))<br/>
+<a name="374"/><span style="color:red">%s%%s%%s%374%s%%s%</span>%t%%t%r%s%-=%s%`BACKWARDS_PAWN_PENALTY;<br/>
+<a name="375"/><span style="color:red">%s%%s%%s%375%s%%s%</span><br/>
+<a name="376"/><span style="color:red">%s%%s%%s%376%s%%s%</span>%t%<span class="comment">/*%s%add%s%a%s%bonus%s%if%s%the%s%pawn%s%is%s%passed%s%*/</span><br/>
+<a name="377"/><span style="color:red">%s%%s%%s%377%s%%s%</span>%t%<span class="keyword">if</span>%s%((pawn_rank[`DARK][f%s%-%s%1]%s%&gt;=%s%ROW(sq))%s%&amp;&amp;<br/>
+<a name="378"/><span style="color:red">%s%%s%%s%378%s%%s%</span>%t%%t%%t%(pawn_rank[`DARK][f]%s%&gt;=%s%ROW(sq))%s%&amp;&amp;<br/>
+<a name="379"/><span style="color:red">%s%%s%%s%379%s%%s%</span>%t%%t%%t%(pawn_rank[`DARK][f%s%+%s%1]%s%&gt;=%s%ROW(sq)))<br/>
+<a name="380"/><span style="color:red">%s%%s%%s%380%s%%s%</span>%t%%t%r%s%+=%s%(7%s%-%s%ROW(sq))%s%*%s%`PASSED_PAWN_BONUS;<br/>
+<a name="381"/><span style="color:red">%s%%s%%s%381%s%%s%</span><br/>
+<a name="382"/><span style="color:red">%s%%s%%s%382%s%%s%</span>%t%<span class="keyword">return</span>%s%r;<br/>
+<a name="383"/><span style="color:red">%s%%s%%s%383%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%eval_light_pawn<br/>
+<a name="384"/><span style="color:red">%s%%s%%s%384%s%%s%</span><br/>
+<a name="385"/><span style="color:red">%s%%s%%s%385%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%eval_dark_pawn(<span class="keyword">int</span>%s%sq);<br/>
+<a name="386"/><span style="color:red">%s%%s%%s%386%s%%s%</span><br/>
+<a name="387"/><span style="color:red">%s%%s%%s%387%s%%s%</span>%t%<span class="keyword">int</span>%s%r;%s%%s%<span class="comment">/*%s%the%s%value%s%to%s%return%s%*/</span><br/>
+<a name="388"/><span style="color:red">%s%%s%%s%388%s%%s%</span>%t%<span class="keyword">int</span>%s%f;%s%%s%<span class="comment">/*%s%the%s%pawn's%s%file%s%*/</span><br/>
+<a name="389"/><span style="color:red">%s%%s%%s%389%s%%s%</span><br/>
+<a name="390"/><span style="color:red">%s%%s%%s%390%s%%s%</span>%t%r%s%=%s%0;<br/>
+<a name="391"/><span style="color:red">%s%%s%%s%391%s%%s%</span>%t%f%s%=%s%COL(sq)%s%+%s%1;<br/>
+<a name="392"/><span style="color:red">%s%%s%%s%392%s%%s%</span><br/>
+<a name="393"/><span style="color:red">%s%%s%%s%393%s%%s%</span>%t%r%s%+=%s%pawn_pcsq[flip[sq]];<br/>
+<a name="394"/><span style="color:red">%s%%s%%s%394%s%%s%</span><br/>
+<a name="395"/><span style="color:red">%s%%s%%s%395%s%%s%</span>%t%<span class="comment">/*%s%if%s%there's%s%a%s%pawn%s%behind%s%this%s%one,%s%it's%s%doubled%s%*/</span><br/>
+<a name="396"/><span style="color:red">%s%%s%%s%396%s%%s%</span>%t%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%&lt;%s%ROW(sq))<br/>
+<a name="397"/><span style="color:red">%s%%s%%s%397%s%%s%</span>%t%%t%r%s%-=%s%`DOUBLED_PAWN_PENALTY;<br/>
+<a name="398"/><span style="color:red">%s%%s%%s%398%s%%s%</span><br/>
+<a name="399"/><span style="color:red">%s%%s%%s%399%s%%s%</span>%t%<span class="comment">/*%s%if%s%there%s%aren't%s%any%s%friendly%s%pawns%s%on%s%either%s%side%s%of</span><br/>
+<a name="400"/><span style="color:red">%s%%s%%s%400%s%%s%</span><span class="comment">%t%%s%%s%%s%this%s%one,%s%it's%s%isolated%s%*/</span><br/>
+<a name="401"/><span style="color:red">%s%%s%%s%401%s%%s%</span>%t%<span class="keyword">if</span>%s%((pawn_rank[`DARK][f%s%-%s%1]%s%==%s%7)%s%&amp;&amp;<br/>
+<a name="402"/><span style="color:red">%s%%s%%s%402%s%%s%</span>%t%%t%%t%(pawn_rank[`DARK][f%s%+%s%1]%s%==%s%7))<br/>
+<a name="403"/><span style="color:red">%s%%s%%s%403%s%%s%</span>%t%%t%r%s%-=%s%`ISOLATED_PAWN_PENALTY;<br/>
+<a name="404"/><span style="color:red">%s%%s%%s%404%s%%s%</span><br/>
+<a name="405"/><span style="color:red">%s%%s%%s%405%s%%s%</span>%t%<span class="comment">/*%s%if%s%it's%s%not%s%isolated,%s%it%s%might%s%be%s%backwards%s%*/</span><br/>
+<a name="406"/><span style="color:red">%s%%s%%s%406%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%((pawn_rank[`DARK][f%s%-%s%1]%s%&gt;%s%ROW(sq))%s%&amp;&amp;<br/>
+<a name="407"/><span style="color:red">%s%%s%%s%407%s%%s%</span>%t%%t%%t%(pawn_rank[`DARK][f%s%+%s%1]%s%&gt;%s%ROW(sq)))<br/>
+<a name="408"/><span style="color:red">%s%%s%%s%408%s%%s%</span>%t%%t%r%s%-=%s%`BACKWARDS_PAWN_PENALTY;<br/>
+<a name="409"/><span style="color:red">%s%%s%%s%409%s%%s%</span><br/>
+<a name="410"/><span style="color:red">%s%%s%%s%410%s%%s%</span>%t%<span class="comment">/*%s%add%s%a%s%bonus%s%if%s%the%s%pawn%s%is%s%passed%s%*/</span><br/>
+<a name="411"/><span style="color:red">%s%%s%%s%411%s%%s%</span>%t%<span class="keyword">if</span>%s%((pawn_rank[`LIGHT][f%s%-%s%1]%s%&lt;=%s%ROW(sq))%s%&amp;&amp;<br/>
+<a name="412"/><span style="color:red">%s%%s%%s%412%s%%s%</span>%t%%t%%t%(pawn_rank[`LIGHT][f]%s%&lt;=%s%ROW(sq))%s%&amp;&amp;<br/>
+<a name="413"/><span style="color:red">%s%%s%%s%413%s%%s%</span>%t%%t%%t%(pawn_rank[`LIGHT][f%s%+%s%1]%s%&lt;=%s%ROW(sq)))<br/>
+<a name="414"/><span style="color:red">%s%%s%%s%414%s%%s%</span>%t%%t%r%s%+=%s%ROW(sq)%s%*%s%`PASSED_PAWN_BONUS;<br/>
+<a name="415"/><span style="color:red">%s%%s%%s%415%s%%s%</span><br/>
+<a name="416"/><span style="color:red">%s%%s%%s%416%s%%s%</span>%t%<span class="keyword">return</span>%s%r;<br/>
+<a name="417"/><span style="color:red">%s%%s%%s%417%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%eval_dark_pawn<br/>
+<a name="418"/><span style="color:red">%s%%s%%s%418%s%%s%</span><br/>
+<a name="419"/><span style="color:red">%s%%s%%s%419%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%eval_light_king(<span class="keyword">int</span>%s%sq);<br/>
+<a name="420"/><span style="color:red">%s%%s%%s%420%s%%s%</span><br/>
+<a name="421"/><span style="color:red">%s%%s%%s%421%s%%s%</span>%t%<span class="keyword">int</span>%s%r;%s%%s%<span class="comment">/*%s%the%s%value%s%to%s%return%s%*/</span><br/>
+<a name="422"/><span style="color:red">%s%%s%%s%422%s%%s%</span>%t%<span class="keyword">int</span>%s%i;<br/>
+<a name="423"/><span style="color:red">%s%%s%%s%423%s%%s%</span><br/>
+<a name="424"/><span style="color:red">%s%%s%%s%424%s%%s%</span>%t%r%s%=%s%king_pcsq[sq];<br/>
+<a name="425"/><span style="color:red">%s%%s%%s%425%s%%s%</span><br/>
+<a name="426"/><span style="color:red">%s%%s%%s%426%s%%s%</span>%t%<span class="comment">/*%s%if%s%the%s%king%s%is%s%castled,%s%use%s%a%s%special%s%function%s%to%s%evaluate%s%the</span><br/>
+<a name="427"/><span style="color:red">%s%%s%%s%427%s%%s%</span><span class="comment">%t%%s%%s%%s%pawns%s%on%s%the%s%appropriate%s%side%s%*/</span><br/>
+<a name="428"/><span style="color:red">%s%%s%%s%428%s%%s%</span>%t%<span class="keyword">if</span>%s%(COL(sq)%s%&lt;%s%3)%s%<br/>
+<a name="429"/><span style="color:red">%s%%s%%s%429%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="430"/><span style="color:red">%s%%s%%s%430%s%%s%</span>%t%%t%r%s%+=%s%eval_lkp(1);<br/>
+<a name="431"/><span style="color:red">%s%%s%%s%431%s%%s%</span>%t%%t%r%s%+=%s%eval_lkp(2);<br/>
+<a name="432"/><span style="color:red">%s%%s%%s%432%s%%s%</span>%t%%t%r%s%+=%s%eval_lkp(3)%s%/%s%2;%s%%s%<span class="comment">/*%s%problems%s%with%s%pawns%s%on%s%the%s%c%s%&amp;%s%f%s%files</span><br/>
+<a name="433"/><span style="color:red">%s%%s%%s%433%s%%s%</span><span class="comment">%t%%t%%t%%t%%t%%t%%t%%t%%s%%s%are%s%not%s%as%s%severe%s%*/</span><br/>
+<a name="434"/><span style="color:red">%s%%s%%s%434%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="435"/><span style="color:red">%s%%s%%s%435%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(COL(sq)%s%&gt;%s%4)%s%<br/>
+<a name="436"/><span style="color:red">%s%%s%%s%436%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="437"/><span style="color:red">%s%%s%%s%437%s%%s%</span>%t%%t%r%s%+=%s%eval_lkp(8);<br/>
+<a name="438"/><span style="color:red">%s%%s%%s%438%s%%s%</span>%t%%t%r%s%+=%s%eval_lkp(7);<br/>
+<a name="439"/><span style="color:red">%s%%s%%s%439%s%%s%</span>%t%%t%r%s%+=%s%eval_lkp(6)%s%/%s%2;<br/>
+<a name="440"/><span style="color:red">%s%%s%%s%440%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="441"/><span style="color:red">%s%%s%%s%441%s%%s%</span><br/>
+<a name="442"/><span style="color:red">%s%%s%%s%442%s%%s%</span>%t%<span class="comment">/*%s%otherwise,%s%just%s%assess%s%a%s%penalty%s%if%s%there%s%are%s%open%s%files%s%near</span><br/>
+<a name="443"/><span style="color:red">%s%%s%%s%443%s%%s%</span><span class="comment">%t%%s%%s%%s%the%s%king%s%*/</span><br/>
+<a name="444"/><span style="color:red">%s%%s%%s%444%s%%s%</span>%t%<span class="keyword">else</span>%s%<br/>
+<a name="445"/><span style="color:red">%s%%s%%s%445%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="446"/><span style="color:red">%s%%s%%s%446%s%%s%</span>%t%%t%<span class="keyword">for</span>%s%(i%s%=%s%COL(sq);%s%i%s%&lt;=%s%COL(sq)%s%+%s%2;%s%++i)%s%%s%%s%%s%%s%%s%%s%%s%<br/>
+<a name="447"/><span style="color:red">%s%%s%%s%447%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%((pawn_rank[`LIGHT][i]%s%==%s%0)%s%&amp;&amp;%s%(pawn_rank[`DARK][i]%s%==%s%7))<br/>
+<a name="448"/><span style="color:red">%s%%s%%s%448%s%%s%</span>%t%%t%%t%%t%r%s%-=%s%10;<br/>
+<a name="449"/><span style="color:red">%s%%s%%s%449%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="450"/><span style="color:red">%s%%s%%s%450%s%%s%</span><br/>
+<a name="451"/><span style="color:red">%s%%s%%s%451%s%%s%</span>%t%<span class="comment">/*%s%scale%s%the%s%king%s%safety%s%value%s%according%s%to%s%the%s%opponent's%s%material;</span><br/>
+<a name="452"/><span style="color:red">%s%%s%%s%452%s%%s%</span><span class="comment">%t%%s%%s%%s%the%s%premise%s%is%s%that%s%your%s%king%s%safety%s%can%s%only%s%be%s%bad%s%if%s%the</span><br/>
+<a name="453"/><span style="color:red">%s%%s%%s%453%s%%s%</span><span class="comment">%t%%s%%s%%s%opponent%s%has%s%enough%s%pieces%s%to%s%attack%s%you%s%*/</span><br/>
+<a name="454"/><span style="color:red">%s%%s%%s%454%s%%s%</span>%t%%s%%s%%s%<br/>
+<a name="455"/><span style="color:red">%s%%s%%s%455%s%%s%</span>%t%<br/>
+<a name="456"/><span style="color:red">%s%%s%%s%456%s%%s%</span>%t%r%s%*=%s%piece_mat[`DARK];<br/>
+<a name="457"/><span style="color:red">%s%%s%%s%457%s%%s%</span>%t%<br/>
+<a name="458"/><span style="color:red">%s%%s%%s%458%s%%s%</span>%t%r%s%/=%s%3100;<br/>
+<a name="459"/><span style="color:red">%s%%s%%s%459%s%%s%</span>%t%<br/>
+<a name="460"/><span style="color:red">%s%%s%%s%460%s%%s%</span>%t%<span class="keyword">return</span>%s%r;<br/>
+<a name="461"/><span style="color:red">%s%%s%%s%461%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%eval_light_king<br/>
+<a name="462"/><span style="color:red">%s%%s%%s%462%s%%s%</span><br/>
+<a name="463"/><span style="color:red">%s%%s%%s%463%s%%s%</span><span class="comment">/*%s%eval_lkp(f)%s%evaluates%s%the%s%Light%s%King%s%Pawn%s%on%s%file%s%f%s%*/</span><br/>
+<a name="464"/><span style="color:red">%s%%s%%s%464%s%%s%</span><br/>
+<a name="465"/><span style="color:red">%s%%s%%s%465%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%eval_lkp(<span class="keyword">int</span>%s%f);<br/>
+<a name="466"/><span style="color:red">%s%%s%%s%466%s%%s%</span><br/>
+<a name="467"/><span style="color:red">%s%%s%%s%467%s%%s%</span>%t%<span class="keyword">int</span>%s%r;<br/>
+<a name="468"/><span style="color:red">%s%%s%%s%468%s%%s%</span>%t%r%s%=%s%0;%t%<span class="comment">//ako%s%je%s%int%s%r%s%=%s%0;%s%//%s%r%s%=%s%0;%s%se%s%zapravo%s%i%s%ne%s%izvrsi</span><br/>
+<a name="469"/><span style="color:red">%s%%s%%s%469%s%%s%</span>%t%<br/>
+<a name="470"/><span style="color:red">%s%%s%%s%470%s%%s%</span>%t%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%==%s%6);%s%%s%<span class="comment">/*%s%pawn%s%hasn't%s%moved%s%*/</span><br/>
+<a name="471"/><span style="color:red">%s%%s%%s%471%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%==%s%5)<br/>
+<a name="472"/><span style="color:red">%s%%s%%s%472%s%%s%</span>%t%%t%r%s%-=%s%10;%s%%s%<span class="comment">/*%s%pawn%s%moved%s%one%s%square%s%*/</span><br/>
+<a name="473"/><span style="color:red">%s%%s%%s%473%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%!=%s%0)<br/>
+<a name="474"/><span style="color:red">%s%%s%%s%474%s%%s%</span>%t%%t%r%s%-=%s%20;%s%%s%<span class="comment">/*%s%pawn%s%moved%s%more%s%than%s%one%s%square%s%*/</span><br/>
+<a name="475"/><span style="color:red">%s%%s%%s%475%s%%s%</span>%t%<span class="keyword">else</span><br/>
+<a name="476"/><span style="color:red">%s%%s%%s%476%s%%s%</span>%t%%t%r%s%-=%s%25;%s%%s%<span class="comment">/*%s%no%s%pawn%s%on%s%this%s%file%s%*/</span><br/>
+<a name="477"/><span style="color:red">%s%%s%%s%477%s%%s%</span><br/>
+<a name="478"/><span style="color:red">%s%%s%%s%478%s%%s%</span>%t%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%==%s%7)<br/>
+<a name="479"/><span style="color:red">%s%%s%%s%479%s%%s%</span>%t%%t%r%s%-=%s%15;%s%%s%<span class="comment">/*%s%no%s%enemy%s%pawn%s%*/</span><br/>
+<a name="480"/><span style="color:red">%s%%s%%s%480%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%==%s%5)<br/>
+<a name="481"/><span style="color:red">%s%%s%%s%481%s%%s%</span>%t%%t%r%s%-=%s%10;%s%%s%<span class="comment">/*%s%enemy%s%pawn%s%on%s%the%s%3rd%s%rank%s%*/</span><br/>
+<a name="482"/><span style="color:red">%s%%s%%s%482%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%==%s%4)<br/>
+<a name="483"/><span style="color:red">%s%%s%%s%483%s%%s%</span>%t%%t%r%s%-=%s%5;%s%%s%%s%<span class="comment">/*%s%enemy%s%pawn%s%on%s%the%s%4th%s%rank%s%*/</span><br/>
+<a name="484"/><span style="color:red">%s%%s%%s%484%s%%s%</span><br/>
+<a name="485"/><span style="color:red">%s%%s%%s%485%s%%s%</span>%t%<span class="keyword">return</span>%s%r;<br/>
+<a name="486"/><span style="color:red">%s%%s%%s%486%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%eval_lkp<br/>
+<a name="487"/><span style="color:red">%s%%s%%s%487%s%%s%</span><br/>
+<a name="488"/><span style="color:red">%s%%s%%s%488%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%eval_dark_king(<span class="keyword">int</span>%s%sq);<br/>
+<a name="489"/><span style="color:red">%s%%s%%s%489%s%%s%</span><br/>
+<a name="490"/><span style="color:red">%s%%s%%s%490%s%%s%</span>%t%<span class="keyword">int</span>%s%r;<br/>
+<a name="491"/><span style="color:red">%s%%s%%s%491%s%%s%</span>%t%<span class="keyword">int</span>%s%i;<br/>
+<a name="492"/><span style="color:red">%s%%s%%s%492%s%%s%</span><br/>
+<a name="493"/><span style="color:red">%s%%s%%s%493%s%%s%</span>%t%r%s%=%s%king_pcsq[flip[sq]];<br/>
+<a name="494"/><span style="color:red">%s%%s%%s%494%s%%s%</span>%t%<span class="keyword">if</span>%s%(COL(sq)%s%&lt;%s%3)%s%<br/>
+<a name="495"/><span style="color:red">%s%%s%%s%495%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="496"/><span style="color:red">%s%%s%%s%496%s%%s%</span>%t%%t%r%s%+=%s%eval_dkp(1);<br/>
+<a name="497"/><span style="color:red">%s%%s%%s%497%s%%s%</span>%t%%t%r%s%+=%s%eval_dkp(2);<br/>
+<a name="498"/><span style="color:red">%s%%s%%s%498%s%%s%</span>%t%%t%r%s%+=%s%eval_dkp(3)%s%/%s%2;<br/>
+<a name="499"/><span style="color:red">%s%%s%%s%499%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="500"/><span style="color:red">%s%%s%%s%500%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(COL(sq)%s%&gt;%s%4)%s%<br/>
+<a name="501"/><span style="color:red">%s%%s%%s%501%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="502"/><span style="color:red">%s%%s%%s%502%s%%s%</span>%t%%t%r%s%+=%s%eval_dkp(8);<br/>
+<a name="503"/><span style="color:red">%s%%s%%s%503%s%%s%</span>%t%%t%r%s%+=%s%eval_dkp(7);<br/>
+<a name="504"/><span style="color:red">%s%%s%%s%504%s%%s%</span>%t%%t%r%s%+=%s%eval_dkp(6)%s%/%s%2;<br/>
+<a name="505"/><span style="color:red">%s%%s%%s%505%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="506"/><span style="color:red">%s%%s%%s%506%s%%s%</span>%t%<span class="keyword">else</span>%s%<br/>
+<a name="507"/><span style="color:red">%s%%s%%s%507%s%%s%</span>%t%<span class="keyword">begin</span><br/>
+<a name="508"/><span style="color:red">%s%%s%%s%508%s%%s%</span>%t%%t%<span class="keyword">for</span>%s%(i%s%=%s%COL(sq);%s%i%s%&lt;=%s%COL(sq)%s%+%s%2;%s%++i)%s%%s%%s%%s%%s%%s%%s%%s%<br/>
+<a name="509"/><span style="color:red">%s%%s%%s%509%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%((pawn_rank[`LIGHT][i]%s%==%s%0)%s%&amp;&amp;%s%(pawn_rank[`DARK][i]%s%==%s%7))<br/>
+<a name="510"/><span style="color:red">%s%%s%%s%510%s%%s%</span>%t%%t%%t%%t%r%s%-=%s%10;%s%%s%%s%%s%%s%%s%%s%%s%<br/>
+<a name="511"/><span style="color:red">%s%%s%%s%511%s%%s%</span>%t%<span class="keyword">end</span><br/>
+<a name="512"/><span style="color:red">%s%%s%%s%512%s%%s%</span><br/>
+<a name="513"/><span style="color:red">%s%%s%%s%513%s%%s%</span>%t%r%s%*=%s%piece_mat[`LIGHT];<br/>
+<a name="514"/><span style="color:red">%s%%s%%s%514%s%%s%</span>%t%r%s%/=%s%3100;<br/>
+<a name="515"/><span style="color:red">%s%%s%%s%515%s%%s%</span>%t%<span class="keyword">return</span>%s%r;<br/>
+<a name="516"/><span style="color:red">%s%%s%%s%516%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%eval_dark_king<br/>
+<a name="517"/><span style="color:red">%s%%s%%s%517%s%%s%</span><br/>
+<a name="518"/><span style="color:red">%s%%s%%s%518%s%%s%</span><span class="keyword">function</span>%s%<span class="keyword">int</span>%s%eval_dkp(<span class="keyword">int</span>%s%f);<br/>
+<a name="519"/><span style="color:red">%s%%s%%s%519%s%%s%</span><br/>
+<a name="520"/><span style="color:red">%s%%s%%s%520%s%%s%</span>%t%<span class="keyword">int</span>%s%r;<br/>
+<a name="521"/><span style="color:red">%s%%s%%s%521%s%%s%</span><br/>
+<a name="522"/><span style="color:red">%s%%s%%s%522%s%%s%</span>%t%r%s%=%s%0;<br/>
+<a name="523"/><span style="color:red">%s%%s%%s%523%s%%s%</span>%t%<br/>
+<a name="524"/><span style="color:red">%s%%s%%s%524%s%%s%</span>%t%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%==%s%1);%s%%s%%s%<span class="comment">/*%s%pawn%s%hasn't%s%moved%s%*/</span><br/>
+<a name="525"/><span style="color:red">%s%%s%%s%525%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%==%s%2)<br/>
+<a name="526"/><span style="color:red">%s%%s%%s%526%s%%s%</span>%t%%t%r%s%-=%s%10;<br/>
+<a name="527"/><span style="color:red">%s%%s%%s%527%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`DARK][f]%s%!=%s%7)<br/>
+<a name="528"/><span style="color:red">%s%%s%%s%528%s%%s%</span>%t%%t%r%s%-=%s%20;<br/>
+<a name="529"/><span style="color:red">%s%%s%%s%529%s%%s%</span>%t%<span class="keyword">else</span><br/>
+<a name="530"/><span style="color:red">%s%%s%%s%530%s%%s%</span>%t%%t%r%s%-=%s%25;<br/>
+<a name="531"/><span style="color:red">%s%%s%%s%531%s%%s%</span><br/>
+<a name="532"/><span style="color:red">%s%%s%%s%532%s%%s%</span>%t%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%==%s%0)<br/>
+<a name="533"/><span style="color:red">%s%%s%%s%533%s%%s%</span>%t%%t%r%s%-=%s%15;<br/>
+<a name="534"/><span style="color:red">%s%%s%%s%534%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%==%s%2)<br/>
+<a name="535"/><span style="color:red">%s%%s%%s%535%s%%s%</span>%t%%t%r%s%-=%s%10;<br/>
+<a name="536"/><span style="color:red">%s%%s%%s%536%s%%s%</span>%t%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(pawn_rank[`LIGHT][f]%s%==%s%3)<br/>
+<a name="537"/><span style="color:red">%s%%s%%s%537%s%%s%</span>%t%%t%r%s%-=%s%5;<br/>
+<a name="538"/><span style="color:red">%s%%s%%s%538%s%%s%</span><br/>
+<a name="539"/><span style="color:red">%s%%s%%s%539%s%%s%</span>%t%<span class="keyword">return</span>%s%r;<br/>
+<a name="540"/><span style="color:red">%s%%s%%s%540%s%%s%</span><span class="keyword">endfunction</span>%s%:%s%eval_dkp<br/>
+<a name="541"/><span style="color:red">%s%%s%%s%541%s%%s%</span><br/>
+<a name="542"/><span style="color:red">%s%%s%%s%542%s%%s%</span>`<span class="keyattr">endif</span></tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>

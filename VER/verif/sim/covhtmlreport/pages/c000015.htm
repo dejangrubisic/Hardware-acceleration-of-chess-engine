@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <!-- original name: _work.b_eval_pawn(Behavioral)ContentFrame4.htm -->
+  <link rel="StyleSheet" media="print"  href="../css/ucdb2htmlP.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html.css"/>
+  <script type="text/javascript" src="../scripts/showhide.js"></script>
+  
+</head>
+<body id="ucdb2html_detail" onload="showLast()">
+  <h1><span class="strip">Questa</span> Condition Coverage Report</h1>
+  <h3>Scope: /<a href="z000015.htm">work.b_eval_pawn(Behavioral)</a></h3>
+  <!-- use script block so buttons vanish when JavaScript is disabled -->
+  <script type="text/javascript">
+  <!--
+  document.write(
+    '<table class="buttons" cellspacing="2" cellpadding="2"><tr>' +
+       '<td id="showAll" width="100" onclick="showAll()" class="button_on" ' +
+           'title="Display all coverage scopes and bins.">Show All</td>' +
+       '<td id="showCov" width="100" onclick="showCov()" class="button_off" ' +
+           'title="Display only covered scopes and bins.">Show Covered</td>' +
+       '<td id="showMis" width="100" onclick="showMis()" class="button_off" ' +
+           'title="Display only uncovered scopes and bins.">Show Missing</td>' +
+    '</tr></table>');
+  //-->
+  </script>
+  <div><a name="cvg2253"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><th colspan="3">FEC Condition: <a href="__HDL_srcfile_10.htm#160">../../dut/b_eval_pawn.vhd:160</a></th><td class="bgYellow">50.00%</td></tr>
+  <tr><th class="even" colspan="1">Input Term</th><th class="even">Covered</th><th class="even">Reason For No Coverage</th><th class="even">Hint</th></tr>
+  <tr><td class="even" colspan="1" align="center">(b_rank_in((TO_INTEGER(s_b_col) + 1)) < TO_INTEGER(s_b_row))</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(s_b_pawn_exist = '1')</td><td class="red">No</td><td class="even" align="center">'_0' not hit</td><td class="even" align="center">Hit '_0'</td></tr>
+  <tr><th class="even" colspan="2">FEC Target</th><th class="even">Hits</th><th class="even">Matching Input Patterns</th></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 1)) < TO_INTEGER(s_b_row))_0</td><td class="even" align="center">9446</td><td class="even" align="center"> { 0- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 1)) < TO_INTEGER(s_b_row))_1</td><td class="even" align="center">749</td><td class="even" align="center"> { 11 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_0</td><td class="even" align="center">0</td><td class="even" align="center"> { 10 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_1</td><td class="even" align="center">749</td><td class="even" align="center"> { 11 } </td></tr>
+  </table>
+</div><div class="covered"><a name="cvg2255"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><th colspan="3">FEC Condition: <a href="__HDL_srcfile_10.htm#164">../../dut/b_eval_pawn.vhd:164</a></th><td class="bgGreen">100.00%</td></tr>
+  <tr><th class="even" colspan="1">Input Term</th><th class="even">Covered</th><th class="even">Reason For No Coverage</th><th class="even">Hint</th></tr>
+  <tr><td class="even" colspan="1" align="center">(b_rank_in((TO_INTEGER(s_b_col) + 0)) = 7)</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(b_rank_in((TO_INTEGER(s_b_col) + 2)) = 7)</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(s_b_pawn_exist = '1')</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><th class="even" colspan="2">FEC Target</th><th class="even">Hits</th><th class="even">Matching Input Patterns</th></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 0)) = 7)_0</td><td class="even" align="center">1438</td><td class="even" align="center"> { 0-- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 0)) = 7)_1</td><td class="even" align="center">1348</td><td class="even" align="center"> { 111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 2)) = 7)_0</td><td class="even" align="center">2514</td><td class="even" align="center"> { 10- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 2)) = 7)_1</td><td class="even" align="center">1348</td><td class="even" align="center"> { 111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_0</td><td class="even" align="center">4895</td><td class="even" align="center"> { 110 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_1</td><td class="even" align="center">1348</td><td class="even" align="center"> { 111 } </td></tr>
+  </table>
+</div><div class="covered"><a name="cvg2257"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><th colspan="3">FEC Condition: <a href="__HDL_srcfile_10.htm#168">../../dut/b_eval_pawn.vhd:168</a></th><td class="bgGreen">100.00%</td></tr>
+  <tr><th class="even" colspan="1">Input Term</th><th class="even">Covered</th><th class="even">Reason For No Coverage</th><th class="even">Hint</th></tr>
+  <tr><td class="even" colspan="1" align="center">(b_rank_in((TO_INTEGER(s_b_col) + 0)) > TO_INTEGER(s_b_row))</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(b_rank_in((TO_INTEGER(s_b_col) + 2)) > TO_INTEGER(s_b_row))</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(s_b_pawn_exist = '1')</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><th class="even" colspan="2">FEC Target</th><th class="even">Hits</th><th class="even">Matching Input Patterns</th></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 0)) > TO_INTEGER(s_b_row))_0</td><td class="even" align="center">907</td><td class="even" align="center"> { 0-- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 0)) > TO_INTEGER(s_b_row))_1</td><td class="even" align="center">742</td><td class="even" align="center"> { 111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 2)) > TO_INTEGER(s_b_row))_0</td><td class="even" align="center">648</td><td class="even" align="center"> { 10- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(b_rank_in((TO_INTEGER(s_b_col) + 2)) > TO_INTEGER(s_b_row))_1</td><td class="even" align="center">742</td><td class="even" align="center"> { 111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_0</td><td class="even" align="center">6550</td><td class="even" align="center"> { 110 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_1</td><td class="even" align="center">742</td><td class="even" align="center"> { 111 } </td></tr>
+  </table>
+</div><div class="covered"><a name="cvg2259"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><th colspan="3">FEC Condition: <a href="__HDL_srcfile_10.htm#174">../../dut/b_eval_pawn.vhd:174</a></th><td class="bgGreen">100.00%</td></tr>
+  <tr><th class="even" colspan="1">Input Term</th><th class="even">Covered</th><th class="even">Reason For No Coverage</th><th class="even">Hint</th></tr>
+  <tr><td class="even" colspan="1" align="center">(w_rank_in((TO_INTEGER(s_b_col) + 0)) <= TO_INTEGER(s_b_row))</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(w_rank_in((TO_INTEGER(s_b_col) + 1)) <= TO_INTEGER(s_b_row))</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(w_rank_in((TO_INTEGER(s_b_col) + 2)) <= TO_INTEGER(s_b_row))</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><td class="even" colspan="1" align="center">(s_b_pawn_exist = '1')</td><td class="green">Yes</td><td class="even" align="center"></td><td class="even" align="center"></td></tr>
+  <tr><th class="even" colspan="2">FEC Target</th><th class="even">Hits</th><th class="even">Matching Input Patterns</th></tr>
+  <tr><td class="even" align="center" colspan="2" >(w_rank_in((TO_INTEGER(s_b_col) + 0)) <= TO_INTEGER(s_b_row))_0</td><td class="even" align="center">572</td><td class="even" align="center"> { 0--- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(w_rank_in((TO_INTEGER(s_b_col) + 0)) <= TO_INTEGER(s_b_row))_1</td><td class="even" align="center">2333</td><td class="even" align="center"> { 1111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(w_rank_in((TO_INTEGER(s_b_col) + 1)) <= TO_INTEGER(s_b_row))_0</td><td class="even" align="center">2690</td><td class="even" align="center"> { 10-- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(w_rank_in((TO_INTEGER(s_b_col) + 1)) <= TO_INTEGER(s_b_row))_1</td><td class="even" align="center">2333</td><td class="even" align="center"> { 1111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(w_rank_in((TO_INTEGER(s_b_col) + 2)) <= TO_INTEGER(s_b_row))_0</td><td class="even" align="center">1388</td><td class="even" align="center"> { 110- } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(w_rank_in((TO_INTEGER(s_b_col) + 2)) <= TO_INTEGER(s_b_row))_1</td><td class="even" align="center">2333</td><td class="even" align="center"> { 1111 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_0</td><td class="even" align="center">3212</td><td class="even" align="center"> { 1110 } </td></tr>
+  <tr><td class="even" align="center" colspan="2" >(s_b_pawn_exist = '1')_1</td><td class="even" align="center">2333</td><td class="even" align="center"> { 1111 } </td></tr>
+  </table>
+</div>
+  <!-- make sure jumps to last few line nos work -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</body>
+</html>

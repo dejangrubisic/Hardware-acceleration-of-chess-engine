@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <!-- original name: _work.select_piece(behavioral)ContentFrame2.htm -->
+  <link rel="StyleSheet" media="print"  href="../css/ucdb2htmlP.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html.css"/>
+  <script type="text/javascript" src="../scripts/showhide.js"></script>
+  
+</head>
+<body id="ucdb2html_detail" onload="showLast()">
+  <h1><span class="strip">Questa</span> Branch Coverage Report</h1>
+  <h3>Scope: /<a href="z000009.htm">work.select_piece(behavioral)</a></h3>
+  <!-- use script block so buttons vanish when JavaScript is disabled -->
+  <script type="text/javascript">
+  <!--
+  document.write(
+    '<table class="buttons" cellspacing="2" cellpadding="2"><tr>' +
+       '<td id="showAll" width="100" onclick="showAll()" class="button_on" ' +
+           'title="Display all coverage scopes and bins.">Show All</td>' +
+       '<td id="showCov" width="100" onclick="showCov()" class="button_off" ' +
+           'title="Display only covered scopes and bins.">Show Covered</td>' +
+       '<td id="showMis" width="100" onclick="showMis()" class="button_off" ' +
+           'title="Display only uncovered scopes and bins.">Show Missing</td>' +
+    '</tr></table>');
+  //-->
+  </script>
+  <div class="covered"><a name="cvg454"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">137:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#137">            if(rising_edge(clk_in) )then</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">137:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#137">            if(rising_edge(clk_in) )then</a></td><td class="odd_r">33799</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg455"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">138:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#138">                  if(reset_in = '1')then</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">138:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#138">                  if(reset_in = '1')then</a></td><td class="odd_r">1</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ELSE</td><td class="even"><span style="color:red">150:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#150">                  else</a></td><td class="odd_r">33798</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg456"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">201:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#201">            case state_reg is</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">203:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#203">            when idle =&gt;    s_w_queen_out &lt;= (others =&gt; '0');</a></td><td class="odd_r">2002</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">212:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#212">            when prologue =&gt;   state_next &lt;= active;           ...</a></td><td class="odd_r">1000</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">218:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#218">            when active =&gt;  s_input_count_next &lt;= s_input_count...</a></td><td class="odd_r">15970</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">234:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#234">            when finished =&gt;    if(eval_finished_in = '1')then</a></td><td class="odd_r">3107</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg457"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">206:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#206">                            if(start_in = '1' )then     --mozda...</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">206:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#206">                            if(start_in = '1' )then     --mozda...</a></td><td class="odd_r">1000</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ALL FALSE</td><td class="even"><span style="color:red">206:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#206">                            if(start_in = '1' )then     --mozda...</a></td><td class="odd_r">1002</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg458"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">220:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#220">                            if(s_input_count = to_unsigned(7, 3...</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">220:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#220">                            if(s_input_count = to_unsigned(7, 3...</a></td><td class="odd_r">1997</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ALL FALSE</td><td class="even"><span style="color:red">220:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#220">                            if(s_input_count = to_unsigned(7, 3...</a></td><td class="odd_r">13973</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg459"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">229:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#229">                            if(s_input_count &gt;= to_unsigned(6, ...</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">229:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#229">                            if(s_input_count &gt;= to_unsigned(6, ...</a></td><td class="odd_r">3992</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ALL FALSE</td><td class="even"><span style="color:red">229:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#229">                            if(s_input_count &gt;= to_unsigned(6, ...</a></td><td class="odd_r">11978</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg460"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">234:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#234">            when finished =&gt;    if(eval_finished_in = '1')then</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">234:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#234">            when finished =&gt;    if(eval_finished_in = '1')then</a></td><td class="odd_r">1000</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ALL FALSE</td><td class="even"><span style="color:red">234:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#234">            when finished =&gt;    if(eval_finished_in = '1')then</a></td><td class="odd_r">2107</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg461"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">354:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#354">        s_w_king_out_next &lt;=    "0" &amp; "000" &amp; s_input_count_del...</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">354:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#354">        s_w_king_out_next &lt;=    "0" &amp; "000" &amp; s_input_count_del...</a></td><td class="odd_r">107</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">355:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#355">                                "0" &amp; "001" &amp; s_input_count_del...</a></td><td class="odd_r">119</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">356:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#356">                                "0" &amp; "010" &amp; s_input_count_del...</a></td><td class="odd_r">124</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">357:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#357">                                "0" &amp; "011" &amp; s_input_count_del...</a></td><td class="odd_r">124</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">358:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#358">                                "0" &amp; "100" &amp; s_input_count_del...</a></td><td class="odd_r">130</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">359:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#359">                                "0" &amp; "101" &amp; s_input_count_del...</a></td><td class="odd_r">123</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">360:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#360">                                "0" &amp; "110" &amp; s_input_count_del...</a></td><td class="odd_r">138</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">361:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#361">                                "0" &amp; "111" &amp; s_input_count_del...</a></td><td class="odd_r">135</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ELSE</td><td class="even"><span style="color:red">361:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#361">                                "0" &amp; "111" &amp; s_input_count_del...</a></td><td class="odd_r">10000</td><td class="green">Covered</td></tr>
+  </table>
+  </div><div class="covered"><a name="cvg462"/><hr/><table cellspacing="2" cellpadding="2">
+  <tr><td colspan="4"><span style="color:red">415:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#415">        s_b_king_out_next &lt;=    "0" &amp; "000" &amp; s_input_count_del...</a></td><td class="bgGreen">100.00%</td></tr><tr><th class="odd" colspan="2">Branch</th><th class="even">Source</th><th class="odd">Hits</th><th class="even">Status</th></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">IF</td><td class="even"><span style="color:red">415:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#415">        s_b_king_out_next &lt;=    "0" &amp; "000" &amp; s_input_count_del...</a></td><td class="odd_r">148</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">416:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#416">                                "0" &amp; "001" &amp; s_input_count_del...</a></td><td class="odd_r">114</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">417:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#417">                                "0" &amp; "010" &amp; s_input_count_del...</a></td><td class="odd_r">122</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">418:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#418">                                "0" &amp; "011" &amp; s_input_count_del...</a></td><td class="odd_r">122</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">419:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#419">                                "0" &amp; "100" &amp; s_input_count_del...</a></td><td class="odd_r">111</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">420:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#420">                                "0" &amp; "101" &amp; s_input_count_del...</a></td><td class="odd_r">115</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">421:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#421">                                "0" &amp; "110" &amp; s_input_count_del...</a></td><td class="odd_r">117</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">TRUE</td><td class="even"><span style="color:red">422:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#422">                                "0" &amp; "111" &amp; s_input_count_del...</a></td><td class="odd_r">151</td><td class="green">Covered</td></tr>
+  <tr class="covered"><td class="invisible">&nbsp;</td><td class="odd">ELSE</td><td class="even"><span style="color:red">422:&nbsp;&nbsp;</span><a href="__HDL_srcfile_3.htm#422">                                "0" &amp; "111" &amp; s_input_count_del...</a></td><td class="odd_r">10000</td><td class="green">Covered</td></tr>
+  </table>
+  </div>
+  <!-- make sure jumps to last few line nos work -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</body>
+</html>
